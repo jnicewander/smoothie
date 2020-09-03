@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "smoothie"
+    }
+  },
+  "defaultProject": "smoothie",
+  "cli": {
+    "analytics": false
+  }
 }
