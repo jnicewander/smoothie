@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { MasterlistResponse } from '../interfaces/masterlist-response';
+import { MasterlistResponse, Records } from '../interfaces/masterlist-response';
 
 @Component({
   selector: 'app-search-results',
@@ -10,16 +10,15 @@ import { MasterlistResponse } from '../interfaces/masterlist-response';
 export class SearchResultsComponent implements OnInit {
 
   constructor(private api: ApiService) { }
-  data: MasterlistResponse[]; 
+  startUps: Records[];
 
   ngOnInit(): void {
     this.getMasterList();
   }
 
   getMasterList() {
-    this.api.getMaster().subscribe((response: MasterlistResponse[]) => {
-      this.data = response;
+    this.api.getMaster().subscribe((response: MasterlistResponse) => {
+      this.startUps = response.records;
     })
   }
-
 }
