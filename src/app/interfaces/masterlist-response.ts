@@ -1,5 +1,8 @@
-
 export interface MasterlistResponse {
+    records: Records[]
+}
+
+export interface Records {
     id: string,
     fields: Fields,
     createdTime: string
