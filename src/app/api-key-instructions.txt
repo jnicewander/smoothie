@@ -1,0 +1,26 @@
+Steps to test your private API key for functionality
+
+1. Inside the app folder, create a file named 'tempVars.ts' <- MUST MATCH EXACTLY FOR SECURITY
+
+2. Open .gitignore inside the src folder and make sure 'tempVars.ts' is listed at the bottom
+
+3. Inside your 'tempVars.ts' file paste the URL object below replace <YOUR_API_KEY> 
+    with your api key from airtable.
+
+export const URL: {BASE: string, API_KEY: string, TABLE_REF: {MASTER: string, PROJECTS: string, FEEDBACK: string}} = {
+    BASE: 'https://api.airtable.com/v0/app7144W3ptq642q7/',
+    API_KEY: '<YOUR_API_KEY>',
+    TABLE_REF: {
+        MASTER: 'Master%20List',
+        PROJECTS: 'Projects',
+        FEEDBACK: 'Feedback'
+    }
+}
+
+4. Save everything, do not use any git commands unless you're certain
+    you're not going to push your private api key to the repo.
+
+5. Run ng serve, go to localhost:4200 in your browser and you should see an unformatted list of
+    startups with 'Company Name', 'Summary', 'Location', and 'Theme(s)'.
+
+6. If you do NOT see the list of names, check the console to see what error you're getting.
