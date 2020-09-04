@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ThemeCardComponent } from './theme-card/theme-card.component';
     AppComponent,
     FilterPipe,
     NavbarComponent,
-    ThemeCardComponent
+    ThemeCardComponent,
+    SearchResultsComponent
 
   ],
   imports: [
