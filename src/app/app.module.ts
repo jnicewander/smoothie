@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { FilterPipe } from './filter.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
+import { from } from 'rxjs';
+import  apiKey  from './apiKey';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -19,7 +22,8 @@ import { ThemeCardComponent } from './theme-card/theme-card.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
