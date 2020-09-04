@@ -5,8 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+
 
 
 @NgModule({
@@ -14,12 +17,14 @@ import { ThemeCardComponent } from './theme-card/theme-card.component';
     AppComponent,
     FilterPipe,
     NavbarComponent,
-    ThemeCardComponent
+    ThemeCardComponent,
+    SearchBarComponent
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
