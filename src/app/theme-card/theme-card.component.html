@@ -1,1 +1,3 @@
-
+<div class='button-container'>
+    <button *ngFor='let title of titles; index as i' [ngClass]='toggleClass(i)'>{{ title }}</button>
+</div>
