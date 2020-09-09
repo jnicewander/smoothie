@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { URL } from './tempVars';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
-
+  // https://gc-airtable-proxy.herokuapp.com/
+  
   constructor(private http: HttpClient) { }
   
   getMaster() {
-    return this.http.get(`${URL.BASE}${URL.TABLE_REF.MASTER}?api_key=${URL.API_KEY}`);
+    return this.http.get('https://gc-airtable-proxy.herokuapp.com/master-list');
   }
 }
