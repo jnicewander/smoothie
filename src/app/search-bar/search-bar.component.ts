@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { ApiService } from './api.service.ts';
 
 @Component({
   selector: 'app-search-bar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
   }
+  searchEndURL: string='';
+  endPointURL: string='';
 
+  }
+}
+
+getSearch(){
+  
 }
