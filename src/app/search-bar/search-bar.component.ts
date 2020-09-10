@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ApiService } from './api.service.ts';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-search-bar',
