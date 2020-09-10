@@ -9,6 +9,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { FormsModule } from '@angular/forms';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+
 
 
 @NgModule({
@@ -18,13 +21,15 @@ import { FavoriteComponent } from './favorite/favorite.component';
     NavbarComponent,
     ThemeCardComponent,
     SearchResultsComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    SearchBarComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
