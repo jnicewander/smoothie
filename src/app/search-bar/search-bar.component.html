@@ -1,0 +1,16 @@
+<base href="/">
+<form #f="ngForm" (ngSubmit)="getSearch(f)">
+    <input type="text" class="form-control" id="searchInput1" placeholder="Search..." name="query" ngModel/>
+    <button type="submit" class="searchBtn">Search</button>
+</form>
+<form class="form-container"#g="ngForm" (ngSubmit)="getCriteria(g)">
+    <label for="advancedcriteria">Advanced Criteria</label>
+<div>
+    <label for="city">City</label>
+    <input type="checkbox" id="city" name="city" ngModel>
+    <label for="theme">Theme</label>
+    <input type="checkbox" id="theme" name="theme" ngModel>
+    <label for="alignment">Alignment</label>
+    <input type="checkbox" id="alignment" name="alignment" ngModel>
+</div>
+</form>

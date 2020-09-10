@@ -8,7 +8,7 @@ export class ApiService {
   PROXY_ROOT: string = 'https://gc-airtable-proxy.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
-
+  
   getMasterList() {
     return this.http.get(this.PROXY_ROOT + 'master-list');
   }
@@ -24,4 +24,5 @@ export class ApiService {
   // getSearchResults() {
 
   // }
+
 }
