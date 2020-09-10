@@ -5,14 +5,24 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ApiService {
+  PROXY_ROOT: string = 'https://gc-airtable-proxy.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
-  apiUrl:string = 'https://api.airtable.com/v0/appFo187B73tuYhyg/Master%20List?api_key=key1EsUq5RZwXesvD' //API key no longer in use
-  getStartups(endPoint:string, query?:string, page?: number){
-    if(page) {
-      return this.http.get(`${this.apiUrl}${endPoint}${query}${page}`)
-    } else {
-      return this.http.get(`${this.apiUrl}${endPoint}${query}`)
-    }
+  
+  getMasterList() {
+    return this.http.get(this.PROXY_ROOT + 'master-list');
   }
+
+  getProjects() {
+    return this.http.get(this.PROXY_ROOT + 'Projects');
+  }
+
+  getFeedBack() {
+    return this.http.get(this.PROXY_ROOT + 'Feedback');
+  }
+
+  // getSearchResults() {
+
+  // }
+
 }
