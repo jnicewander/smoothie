@@ -10,6 +10,7 @@ import { FilterPipe } from './filter.pipe';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { FavoritesComponent } from './favorites/favorites.component';
 
 
 
@@ -19,7 +20,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     FilterPipe,
     NavbarComponent,
     ThemeCardComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    FavoritesComponent
 
   ],
   imports: [
