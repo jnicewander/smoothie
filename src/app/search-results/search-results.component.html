@@ -1,1 +1,5 @@
-<p>search-results works!</p>
+<div>
+    <ul *ngFor='let startup of startups'>
+        <li>{{ startup.fields["Company Name"] }}</li>
+    </ul>
+</div>
