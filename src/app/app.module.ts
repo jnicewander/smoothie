@@ -11,6 +11,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 
@@ -21,7 +22,8 @@ import { FavoritesComponent } from './favorites/favorites.component';
     NavbarComponent,
     ThemeCardComponent,
     SearchBarComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    SearchResultsComponent
 
   ],
   imports: [
