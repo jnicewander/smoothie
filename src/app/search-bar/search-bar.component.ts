@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { ApiService } from '../services/api.service';
+import { SearchService } from '../services/search.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,16 +9,13 @@ import { ApiService } from '../services/api.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private search: SearchService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  onSubmit(form: NgForm) {
+    this.search.searchQuery.emit(form.value.query);
+    form.value.query = '';
   }
-  searchEndURL: string='';
-  endPointURL: string='';
 
-  }
-}
-
-getSearch(){
-  
 }
