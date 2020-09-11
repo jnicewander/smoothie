@@ -21,8 +21,4 @@ export class ApiService {
     return this.http.get(this.PROXY_ROOT + 'Feedback');
   }
 
-  // getSearchResults() {
-
-  // }
-
 }
