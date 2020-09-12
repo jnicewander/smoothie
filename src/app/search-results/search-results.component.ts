@@ -18,8 +18,6 @@ export class SearchResultsComponent implements OnInit {
     })
   }
 
-  // onSearch will be called onClick in the search-bar component
-  // the user text will be passed in as an argument(query).
   onSearch(query: string) {
     this.api.getMasterList().subscribe((response: MasterListResponse) => {
       this.startups = response.records.filter((object) => {
