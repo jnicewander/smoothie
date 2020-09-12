@@ -1,5 +1,8 @@
 <div>
     <ul *ngFor='let startup of startups'>
+        <!-- See MasterList - Fields interface for key names -->
         <li>{{ startup.fields["Company Name"] }}</li>
+        <li>{{ startup.fields["Two Line Company Summary"] }}</li>
+        <li>{{ startup.fields["Theme(s)"] }}</li>
     </ul>
 </div>
