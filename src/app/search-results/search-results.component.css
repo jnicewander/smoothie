@@ -12,6 +12,14 @@ ul {
     box-shadow: 0 1px 5px darkgrey;
 }
 
+li {
+    display: flex;
+}
+
+span {
+    flex-basis: 50%;
+}
+
 /* CSS selector applies styles to any class that begins with col- */
 [class^='col-']  {
     flex-basis: 25%;
@@ -28,5 +36,9 @@ ul {
 
     ul {
         flex-direction: row;
+    }
+
+    .mobile-heading {
+        display: none;
     }
 }
