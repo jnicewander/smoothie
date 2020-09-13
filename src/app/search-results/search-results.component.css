@@ -1,0 +1,32 @@
+.headings {
+    display: none;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    margin: .5rem auto;
+    padding: .5rem;
+    border: 1px solid darkslategray;
+    box-shadow: 0 1px 5px darkgrey;
+}
+
+/* CSS selector applies styles to any class that begins with col- */
+[class^='col-']  {
+    flex-basis: 25%;
+}
+
+.col-2 {
+    flex-basis: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+    .headings {
+        display: flex;
+    }
+
+    ul {
+        flex-direction: row;
+    }
+}
