@@ -1,0 +1,5 @@
+/* host targets the parent element of the component */
+:host {
+    margin: 0 auto;
+    text-align: center;
+}
