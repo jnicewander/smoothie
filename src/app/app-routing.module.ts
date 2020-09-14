@@ -5,6 +5,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 
 
 const routes: Routes = [
+  {path: "", component: SearchResultsComponent},
   { path: "favorites", component: FavoritesComponent}
 ];
 
@@ -13,3 +14,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponent = [SearchResultsComponent, FavoritesComponent]
