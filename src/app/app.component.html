@@ -1,17 +1,9 @@
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-<header>
-    <img src="assets/images/SMOOTHIE.png" alt="smoothie logo" a href="#" class="logo">
-    <nav>
-        <ul class="navLinks">
-            <li><a routerLink="favorites" routerLinkActive="activeLink">Favorites</a></li>
-        </ul>
-    </nav>
-</header>
+<app-navbar></app-navbar>
+<ul class="navLinks">
+    <li><a routerLink="favorites" routerLinkActive="activeLink">Favorites</a></li>
+</ul>
 <app-search-bar></app-search-bar>
 <router-outlet></router-outlet>
 <app-startup-details></app-startup-details>
 <app-theme-card></app-theme-card>
-
-
-
 
