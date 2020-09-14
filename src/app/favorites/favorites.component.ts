@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Records, Fields } from '../interfaces/master-list-response';
 import { FavoritesService } from '../services/favorites.service';
+import { MasterListResponse } from '../interfaces/master-list-response';
 
 @Component({
   selector: 'app-favorites',
@@ -10,10 +11,12 @@ import { FavoritesService } from '../services/favorites.service';
 
 export class FavoritesComponent implements OnInit {
 
-  favorites: Records[]; 
+  startups: Records[]; 
   constructor(private favoritesService: FavoritesService) { }
   ngOnInit(){
-    this.favorites = this.favoritesService.favoriteStartups
+    this.startups = this.favoritesService.favoriteStartups
   }
-
+  removeFavorite(startup){
+    this.favoritesService.removeFavorite(startup)
+  }
 }
