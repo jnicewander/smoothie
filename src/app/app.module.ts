@@ -12,6 +12,7 @@ import { ThemeCardComponent } from './theme-card/theme-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { StartupDetailsComponent } from './startup-details/startup-details.component';
 
 
 
@@ -23,7 +24,8 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     ThemeCardComponent,
     SearchBarComponent,
     FavoritesComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    StartupDetailsComponent
 
   ],
   imports: [
