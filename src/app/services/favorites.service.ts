@@ -13,6 +13,7 @@ export class FavoritesService {
   addFavorite(startup:Records){
     this.favoriteStartups.push(startup)
     console.log(this.favoriteStartups)
+    alert("Favorite Added!")
   }
   
   removeFavorite(startup:Records){
