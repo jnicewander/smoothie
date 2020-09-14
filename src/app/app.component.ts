@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
-
-@Component({
+import { Router } from '@angular/router'
+ @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'smoothie';
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.navigate([''])
+  }
 }
+  
+
