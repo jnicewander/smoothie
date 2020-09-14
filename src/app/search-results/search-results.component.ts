@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ApiService } from '../services/api.service';
 import { MasterListResponse, Records } from '../interfaces/master-list-response';
+import { FavoritesService } from '../services/favorites.service'
 
 @Component({
   selector: 'app-search-results',
@@ -10,7 +11,7 @@ import { MasterListResponse, Records } from '../interfaces/master-list-response'
 })
 export class SearchResultsComponent implements OnInit {
   startups: Records[];
-  constructor(private search: SearchService, private api: ApiService) {}
+  constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService) {}
 
   ngOnInit(): void {
     this.search.searchQuery.subscribe((query) => {
@@ -26,6 +27,9 @@ export class SearchResultsComponent implements OnInit {
             .includes(query.toLowerCase()));
       });
     })
+  }
+  addFavorite(startup){
+    this.favoritesService.addFavorite(startup)
   }
 
 }
