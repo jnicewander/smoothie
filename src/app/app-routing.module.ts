@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { FavoritesService } from '../app/services/favorites.service'
+import { SearchResultsComponent} from '../app/search-results/search-results.component'
 import { FavoritesComponent } from './favorites/favorites.component';
 
+
 const routes: Routes = [
-  { path: "favorites", component: FavoritesComponent},
+  {path: "", component: SearchResultsComponent},
+  { path: "favorites", component: FavoritesComponent}
 ];
 
 @NgModule({
