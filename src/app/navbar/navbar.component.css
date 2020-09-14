@@ -12,13 +12,6 @@
 .logo:hover{
     color: lightblue;
 }
-li,a {
-    
-    font-weight: 500px;
-    font-size:16px;
-    color: white;
-    text-decoration: none;
-}
 
 header{
     display: flex;
@@ -27,26 +20,3 @@ header{
     padding: 20px ;
 }
 
-.navLinks{
-    list-style: none;
-}
-
-img{
-    max-width: 100%;
-    max-height: 80px
-}
-li{
-    display: flex;
-
-}
-.navLinks li a{
-font-family: Montserrat;
-transition: all 0.3s ease 0s;
-color:  black;
-margin-top: 10px;
-/* margin-left: 70px; */
-font-size: 15px;
-}
-.navLinks li a:hover{
-    color: lightblue;
-}
