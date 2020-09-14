@@ -2,10 +2,11 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
+    background-color: lightgray;
 }
 
 li,a {
-    
+ 
     font-weight: 500px;
     font-size:16px;
     color: white;
@@ -26,9 +27,9 @@ transition: all 0.3s ease 0s;
 color:  black;
 margin: 0 auto;
 font-size: 15px;
+margin-bottom: 10px;
 }
 
-
 .navLinks li a:hover{
-    color: lightblue;
+    color: darkblue;
 }
