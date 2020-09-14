@@ -3,3 +3,8 @@
     margin: 0 auto;
     text-align: center;
 }
+.form-control{
+    width: 30%;
+    height: 25px;
+    margin-right: 10px;
+}
