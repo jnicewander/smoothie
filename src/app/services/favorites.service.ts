@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { from } from 'rxjs';
-import { Records, Fields } from '../interfaces/master-list-response';
+import { MasterListRecords, MasterListFields } from '../interfaces/master-list-response';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +8,15 @@ import { Records, Fields } from '../interfaces/master-list-response';
 export class FavoritesService {
 
   constructor() { }
-  favoriteStartups: Records[] = [];
+  favoriteStartups: MasterListRecords[] = [];
 
-  addFavorite(startup:Records){
+  addFavorite(startup:MasterListRecords){
     this.favoriteStartups.push(startup)
     console.log(this.favoriteStartups)
     alert("Favorite Added!")
   }
   
-  removeFavorite(startup:Records){
+  removeFavorite(startup:MasterListRecords){
     let index = this.favoriteStartups.findIndex(item=>item.id===startup.id)
     this.favoriteStartups.splice(index,1)
   }

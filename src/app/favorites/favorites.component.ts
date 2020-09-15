@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Records, Fields } from '../interfaces/master-list-response';
+import { MasterListRecords, MasterListFields } from '../interfaces/master-list-response';
 import { FavoritesService } from '../services/favorites.service';
 import { MasterListResponse } from '../interfaces/master-list-response';
 import { DetailsService } from '../services/details.service';
@@ -12,7 +12,7 @@ import { DetailsService } from '../services/details.service';
 
 export class FavoritesComponent implements OnInit {
 
-  startups: Records[]; 
+  startups: MasterListRecords[]; 
   constructor(private favoritesService: FavoritesService, private detailsService: DetailsService) { }
   ngOnInit(){
     this.startups = this.favoritesService.favoriteStartups

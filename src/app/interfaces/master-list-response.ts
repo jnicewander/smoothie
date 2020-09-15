@@ -1,14 +1,14 @@
 export interface MasterListResponse {
-    records: Records[]
+    records: MasterListRecords[]
 }
 
-export interface Records {
+export interface MasterListRecords {
     id: string,
-    fields: Fields,
+    fields: MasterListFields,
     createdTime: string
 }
 
-export interface Fields {
+export interface MasterListFields {
     "Company Name": string,
     "Review Date": string,
     "Date Added": string,

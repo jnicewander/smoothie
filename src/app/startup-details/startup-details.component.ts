@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailsService } from '../services/details.service';
-import { Records } from '../interfaces/master-list-response';
+import { MasterListRecords } from '../interfaces/master-list-response';
 
 @Component({
   selector: 'app-startup-details',
@@ -8,7 +8,7 @@ import { Records } from '../interfaces/master-list-response';
   styleUrls: ['./startup-details.component.css']
 })
 export class StartupDetailsComponent implements OnInit {
-  startup: Records;
+  startup: MasterListRecords;
   constructor(private details: DetailsService) { }
 
   ngOnInit(): void {

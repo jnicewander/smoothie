@@ -1,14 +1,14 @@
 export interface FeedbackResponse {
-    records: Records[]
+    records: FeedbackRecords[]
 }
 
-export interface Records {
+export interface FeedbackRecords {
     id: string,
-    fields: Fields,
+    fields: FeedbackFields,
     createdTime: string
 }
 
-export interface Fields {
+export interface FeedbackFields {
     "Intro Date": string,
     "Startup": string,
     "Your Organization": string,

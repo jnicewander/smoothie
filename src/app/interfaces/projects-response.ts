@@ -1,14 +1,14 @@
 export interface ProjectsResponse {
-    records: Records[]
+    records: ProjectsRecords[]
 }
 
-export interface Records {
+export interface ProjectsRecords {
     id: string,
-    fields: Fields,
+    fields: ProjectsFields,
     createdTime: string
 }
 
-export interface Fields {
+export interface ProjectsFields {
     "Project Name": string,
     "Startup Engaged": string,
     "Partners Involved": string,

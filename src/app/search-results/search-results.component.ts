@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ApiService } from '../services/api.service';
-import { MasterListResponse, Records } from '../interfaces/master-list-response';
+import { MasterListResponse, MasterListRecords } from '../interfaces/master-list-response';
 import { DetailsService } from '../services/details.service';
 import { FavoritesService } from '../services/favorites.service'
 
@@ -11,7 +11,7 @@ import { FavoritesService } from '../services/favorites.service'
   styleUrls: ['./search-results.component.css'],
 })
 export class SearchResultsComponent implements OnInit {
-  startups: Records[];
+  startups: MasterListRecords[];
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
