@@ -1,8 +1,24 @@
+<!-- Add a close button!! -->
 <div *ngIf='startup'>
-    <!-- An unordered list would work better here. -->
-    <h1>{{ startup.fields["Company Name"] }}</h1>
-    <p>{{ startup.fields["Date Added"]}}</p>
-    <p>{{ startup.fields["Scout"]}}</p>
-    <p>{{ startup.fields["Country"]}}</p>
-    <!-- Fill out this section with any extra details... -->
+    <ul>
+       <li>
+           <h1>{{ startup.fields["Company Name"] }}</h1>
+        </li>
+       <li>{{ startup.fields["Company Website"] }}</li>
+       <li>
+           <ul>
+               <li>{{ startup.fields.City }},</li>
+               <li *ngIf='startup.fields.State'>{{ startup.fields.State }},</li>
+               <li>{{ startup.fields.Country }}</li>
+           </ul>
+       </li>
+    </ul>
+    <ul>
+        <li>{{ startup.fields["Two Line Company Summary"] }}</li>
+    </ul>
+    <ul>
+        <li>{{ startup.fields.Alignment }}</li>
+        <li>{{ startup.fields["Theme(s)"] }}</li>
+        <li>{{ startup.fields.Landscape }}</li>
+    </ul>
 </div>
