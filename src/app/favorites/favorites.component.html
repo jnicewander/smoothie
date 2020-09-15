@@ -10,7 +10,7 @@
         <h2>Theme(s)</h2>
     </li>
 </ul>
-<ul *ngFor='let startup of startups'>
+<ul *ngFor='let startup of startups' (click)='showDetails(startup)'>
     <!-- See MasterList - Fields interface for key names -->
     <li class='col-1'>
         <span class="mobile-heading">Company</span>
