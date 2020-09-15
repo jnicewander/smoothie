@@ -1,18 +1,29 @@
 <!-- <base href="/"> -->
+
+<head>
+    <link rel="stylesheet" href="search-bar.component.css">
+</head>
+<body>
+
 <h2> -A Smooth Way To Search For Startups</h2>
+
 <form #formID="ngForm" (ngSubmit)="onSubmit(formID)">
     <input type="text" class="form-control" id="searchInput1" placeholder="" name="query" ngModel/>
     <button type="submit" class="searchBtn">Search</button>
 </form>
-<!-- <form class="form-container"#g="ngForm" (ngSubmit)="getCriteria(g)">
+ <form class="form-container"#g="ngForm" (ngSubmit)="getCriteria(g)">
     <label for="advancedcriteria">Advanced Criteria</label>
 <div>
     <label for="city">City</label>
     <input type="checkbox" id="city" name="city" ngModel>
+    <input type="text" placeholder="City..." id="cty" name="nname">
     <label for="theme">Theme</label>
     <input type="checkbox" id="theme" name="theme" ngModel>
+    <input type="text" placeholder="Theme..." id="thm" name="themes">
     <label for="alignment">Alignment</label>
     <input type="checkbox" id="alignment" name="alignment" ngModel>
+    <input type="text" placeholder="Alignment..." id="align" name="align">
 </div>
-</form> -->
+</form>
+</body>
 

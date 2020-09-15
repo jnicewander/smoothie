@@ -19,3 +19,4 @@ export class SearchBarComponent implements OnInit {
   }
 
 }
+
