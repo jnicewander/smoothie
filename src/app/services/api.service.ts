@@ -11,7 +11,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
   
-  getMasterList(route?: string, startup?: string) {
+  getTableData(route?: string, startup?: string) {
     let urlString: string = this.PROXY_ROOT;
     
     if (route) {
@@ -31,8 +31,10 @@ export class ApiService {
         urlString += '%7BCompany+Name%7D%3D%22';
       }
       urlString += startupURI + '%22';
-
+    } else {
+      urlString += '?sort%5B0%5D%5Bfield%5D=Company%20Name';
     }
+    // urlString += 
 
     return this.http.get(urlString);
   }
