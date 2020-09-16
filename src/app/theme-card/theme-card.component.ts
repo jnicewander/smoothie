@@ -20,7 +20,7 @@ export class ThemeCardComponent implements OnInit {
   }
 
   onSubmit(value: string) {
-    this.search.searchQuery.emit(value);
+    this.search.searchQuery.emit(value.toLowerCase());
   }
 
   // onSubmit(form: NgForm) {

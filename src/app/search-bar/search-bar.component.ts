@@ -14,7 +14,7 @@ export class SearchBarComponent implements OnInit {
   ngOnInit(): void { }
 
   onSubmit(form: NgForm) {
-    this.search.searchQuery.emit(form.value.query);
+    this.search.searchQuery.emit(form.value.query.toLowerCase());
   }
 
 }
