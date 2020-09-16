@@ -11,6 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { StartupDetailsComponent } from './startup-details/startup-details.component';
+import { ThemeCard2Component } from './theme-card2/theme-card2.component';
+import { ThemeCard3Component } from './theme-card3/theme-card3.component';
 
 
 
@@ -23,6 +25,8 @@ import { StartupDetailsComponent } from './startup-details/startup-details.compo
     SearchBarComponent,
     StartupDetailsComponent,
     routingComponent,
+    ThemeCard2Component,
+    ThemeCard3Component,
    
   ],
   imports: [
