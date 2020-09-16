@@ -16,29 +16,33 @@ export class SearchResultsComponent implements OnInit {
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
-    this.getMasterList();
+    // this.getMasterList();
     this.search.searchQuery.subscribe((query) => {
-      this.filterByQuery(query);
+      // this.filterByQuery(query);
+      this.api.getTableData(query).subscribe((response: MasterListResponse) => {
+            this.filteredStartups = response.records;
+          })
+
     })
   }
 
-  getMasterList() {
-    this.api.getTableData().subscribe((response: MasterListResponse) => {
-      this.startups = response.records;
-    })
-  }
+  // getMasterList() {
+  //   this.api.getTableData().subscribe((response: MasterListResponse) => {
+  //     this.startups = response.records;
+  //   })
+  // }
 
-  filterByQuery(query: string) {
-    if (query) {
-      this.filteredStartups = this.startups.filter((object) => {
-        return Object.keys(object.fields)
-          .some(key => object.fields[key].toLowerCase()
-            .includes(query.toLowerCase()));
-      });
-    } else {
-      this.filteredStartups = this.startups;
-    }
-  }
+  // filterByQuery(query: string) {
+  //   if (query) {
+  //     this.filteredStartups = this.startups.filter((object) => {
+  //       return Object.keys(object.fields)
+  //         .some(key => object.fields[key].toLowerCase()
+  //           .includes(query.toLowerCase()));
+  //     });
+  //   } else {
+  //     this.filteredStartups = this.startups;
+  //   }
+  // }
 
   showDetails(startup) {
     this.detailsService.getDetails.emit(startup);
