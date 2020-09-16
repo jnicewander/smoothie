@@ -26,13 +26,13 @@ export class StartupDetailsComponent implements OnInit {
   }
   
   getFeedbackDetails(route: string, startup: string): void {
-    this.apiService.getMasterList(route, startup).subscribe((response: FeedbackResponse) => {
+    this.apiService.getTableData(route, startup).subscribe((response: FeedbackResponse) => {
       this.feedback = response.records;
     })
   }
   
   getProjects(route: string, startup: string): void {
-    this.apiService.getMasterList(route, startup).subscribe((response: ProjectsResponse) => {
+    this.apiService.getTableData(route, startup).subscribe((response: ProjectsResponse) => {
       this.projects = response.records;
       this.mergeDetails();
     })

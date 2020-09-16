@@ -1,5 +1,6 @@
 export interface MasterListResponse {
     records: MasterListRecords[]
+    offset: string;
 }
 
 export interface MasterListRecords {

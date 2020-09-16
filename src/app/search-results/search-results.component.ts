@@ -12,27 +12,34 @@ import { FavoritesService } from '../services/favorites.service'
 })
 export class SearchResultsComponent implements OnInit {
   startups: MasterListRecords[];
+  filteredStartups: MasterListRecords[];
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
+    this.getMasterList();
     this.search.searchQuery.subscribe((query) => {
-      this.onSearch(query);
+      this.filterByQuery(query);
     })
   }
 
-  onSearch(query: string) {
-    this.api.getMasterList().subscribe((response: MasterListResponse) => {
-      this.startups = response.records.filter((object) => {
+  getMasterList() {
+    this.api.getTableData().subscribe((response: MasterListResponse) => {
+      this.startups = response.records;
+    })
+  }
+
+  filterByQuery(query: string) {
+    if (query) {
+      this.filteredStartups = this.startups.filter((object) => {
         return Object.keys(object.fields)
           .some(key => object.fields[key].toLowerCase()
             .includes(query.toLowerCase()));
       });
-    })
+    }
   }
 
   showDetails(startup) {
     this.detailsService.getDetails.emit(startup);
-    // add routing to display startup-detail component in here.
   }
 
   addFavorite(startup){

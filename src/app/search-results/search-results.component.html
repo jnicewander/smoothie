@@ -1,4 +1,4 @@
-<ul class="headings" *ngIf='startups'>
+<ul class="headings" *ngIf='filteredStartups'>
     <li class='col-1'>
         <h2>Company Name</h2>
     </li>
@@ -9,7 +9,7 @@
         <h2>Theme(s)</h2>
     </li>
 </ul>
-<ul *ngFor='let startup of startups' (click)='showDetails(startup)'>
+<ul *ngFor='let startup of filteredStartups' (click)='showDetails(startup)'>
     <!-- See MasterList - Fields interface for key names -->
     <li class='col-1'>
         <span class="mobile-heading">Company</span>
