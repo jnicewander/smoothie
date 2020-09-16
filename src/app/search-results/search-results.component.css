@@ -28,7 +28,11 @@ span {
 .col-2 {
     flex-basis: 50%;
 }
-
+.themeCardTitle{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
 @media only screen and (min-width: 768px) {
     .headings {
         display: flex;
