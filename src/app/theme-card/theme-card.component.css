@@ -10,20 +10,9 @@ button {
     width: 150px;
     min-height: 200px;
     font-weight: bold;
-    color:white;
+    color:black;
     white-space: normal;
     border: none;
     box-shadow: 1px 4px 10px rgb(131, 131, 131);
 }
 
-.good-life {
-    background: orange;
-}
-
-.health {
-    background: greenyellow;
-}
-
-.future {
-    background: lightseagreen;
-}

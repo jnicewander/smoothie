@@ -2,9 +2,11 @@
     box-sizing: border-box;
     margin:0;
     padding:0;
-    background-color: rgb(255, 255, 255);
 }
-
+.favButton{
+padding: 5px;
+border-radius: 5px;
+}
 li,a {
  
     font-weight: 500px;
@@ -32,22 +34,4 @@ margin-bottom: 10px;
 
 .navLinks li a:hover{
     color: darkblue;
-}
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-button {
-    display: inline-block;
-    margin: 2rem;
-    padding: 0;
-    width: 150px;
-    min-height: 200px;
-    font-weight: bold;
-    color:rgb(0, 0, 0);
-    white-space: normal;
-    border: none;
-    box-shadow: 1px 4px 10px rgb(131, 131, 131);
 }

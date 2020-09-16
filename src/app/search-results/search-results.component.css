@@ -41,4 +41,10 @@ span {
     .mobile-heading {
         display: none;
     }
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
 }
