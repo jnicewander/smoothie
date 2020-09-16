@@ -35,6 +35,8 @@ export class SearchResultsComponent implements OnInit {
           .some(key => object.fields[key].toLowerCase()
             .includes(query.toLowerCase()));
       });
+    } else {
+      this.filteredStartups = this.startups;
     }
   }
 
