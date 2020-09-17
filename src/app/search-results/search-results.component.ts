@@ -19,10 +19,9 @@ export class SearchResultsComponent implements OnInit {
     // this.getMasterList();
     this.search.searchQuery.subscribe((query) => {
       // this.filterByQuery(query);
-      this.api.getTableData(query).subscribe((response: MasterListResponse) => {
+      this.api.getTableData(null, null, query).subscribe((response: MasterListResponse) => {
             this.filteredStartups = response.records;
           })
-
     })
   }
 
