@@ -12,17 +12,31 @@ import { FavoritesService } from '../services/favorites.service'
 })
 export class SearchResultsComponent implements OnInit {
   startups: MasterListRecords[];
-  filteredStartups: MasterListRecords[];
+  offsetValues: string[] = [];
+  // filteredStartups: MasterListRecords[];
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
     // this.getMasterList();
     this.search.searchQuery.subscribe((query) => {
       // this.filterByQuery(query);
-      this.api.getTableData(null, null, query).subscribe((response: MasterListResponse) => {
-            this.filteredStartups = response.records;
+      this.api.getTableData(query).subscribe((response: MasterListResponse) => {
+            console.log(response.offset + '  <-- The offset');
+            this.offsetValues.push(response.offset);
+            this.startups = response.records;
           })
     })
+  }
+
+  next() {
+    this.api.getTableData(null, this.offsetValues[this.offsetValues.length -1]).subscribe((response: MasterListResponse) => {
+      this.offsetValues.push(response.offset);
+      this.startups = response.records
+    })
+  }
+
+  previous() {
+    
   }
 
   // getMasterList() {
