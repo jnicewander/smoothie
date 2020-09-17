@@ -1,4 +1,4 @@
-<ul class="headings" *ngIf='filteredStartups'>
+<ul class="headings" *ngIf='startups'>
     <li class='col-1'>
         <h2>Company Name</h2>
     </li>
@@ -9,7 +9,7 @@
         <h2>Theme(s)</h2>
     </li>
 </ul>
-<ul *ngFor='let startup of filteredStartups' (click)='showDetails(startup)'>
+<ul *ngFor='let startup of startups' (click)='showDetails(startup)'>
     <!-- See MasterList - Fields interface for key names -->
     <li class='col-1'>
         <span class="mobile-heading">Company</span>
@@ -25,6 +25,9 @@
     </li>
     <li><button (click)="addFavorite(startup)">Add to Favorites</button></li>
 </ul>
+<button (click)='previous()'>PREVIOUS</button>
+<button (click)='next()'>NEXT</button>
+
 <h2 class="themeCardTitle">Startup Company Themes</h2>
 <div class='card-container'>
 <app-theme-card theme='The Good Life'></app-theme-card>
