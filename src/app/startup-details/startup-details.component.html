@@ -1,4 +1,8 @@
-<div>
+<div *ngIf='startup'>
+    <!-- An unordered list would work better here. -->
     <h1>{{ startup.fields["Company Name"] }}</h1>
+    <p>{{ startup.fields["Date Added"]}}</p>
+    <p>{{ startup.fields["Scout"]}}</p>
+    <p>{{ startup.fields["Country"]}}</p>
     <!-- Fill out this section with any extra details... -->
 </div>
