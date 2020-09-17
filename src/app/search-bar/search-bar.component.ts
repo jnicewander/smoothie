@@ -17,5 +17,8 @@ export class SearchBarComponent implements OnInit {
     this.search.searchQuery.emit(form.value.query.toLowerCase());
   }
 
+  getCriteria(g){
+
+  }
 }
 
