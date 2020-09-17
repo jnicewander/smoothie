@@ -14,13 +14,14 @@ export class StartupDetailsComponent implements OnInit {
   startup: MasterListRecords;
   feedback: FeedbackRecords[];
   projects: ProjectsRecords[];
-
+  modalView: boolean = false;
   constructor(private details: DetailsService, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.details.getDetails.subscribe(response => {
       this.getFeedbackDetails('Feedback', response.fields["Company Name"]);
       this.getProjects('Projects', response.fields["Company Name"]);
+      this.toggleModal();
       this.startup = response;
     })
   }
@@ -49,4 +50,9 @@ export class StartupDetailsComponent implements OnInit {
     console.log(this.startup);
     }
   }
+
+  toggleModal() {
+    this.modalView = !this.modalView
+  }
+
 }

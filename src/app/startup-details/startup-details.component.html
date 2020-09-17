@@ -1,24 +1,33 @@
 <!-- Add a close button!! -->
-<div *ngIf='startup'>
-    <ul>
-       <li>
-           <h1>{{ startup.fields["Company Name"] }}</h1>
-        </li>
-       <li>{{ startup.fields["Company Website"] }}</li>
-       <li>
-           <ul>
-               <li>{{ startup.fields.City }},</li>
-               <li *ngIf='startup.fields.State'>{{ startup.fields.State }},</li>
-               <li>{{ startup.fields.Country }}</li>
-           </ul>
-       </li>
-    </ul>
-    <ul>
-        <li>{{ startup.fields["Two Line Company Summary"] }}</li>
-    </ul>
-    <ul>
-        <li>{{ startup.fields.Alignment }}</li>
-        <li>{{ startup.fields["Theme(s)"] }}</li>
-        <li>{{ startup.fields.Landscape }}</li>
-    </ul>
+<div class='container' *ngIf='modalView'>
+    <div class="modal">
+        <div class='modal-header'>
+            <div>
+                <h1>{{ startup.fields["Company Name"] }}</h1>
+            </div>
+            <div>
+                <button (click)='toggleModal()'>X</button>
+            </div>
+        </div>
+        <div class="modal-content">
+            <ul> -->
+               <li>{{ startup.fields["Company Website"] }}</li>
+               <li>
+                   <ul>
+                       <li>{{ startup.fields.City }},</li>
+                       <li *ngIf='startup.fields.State'>{{ startup.fields.State }},</li>
+                       <li>{{ startup.fields.Country }}</li>
+                   </ul>
+               </li>
+            </ul>
+            <ul>
+                <li>{{ startup.fields["Two Line Company Summary"] }}</li>
+            </ul>
+            <ul>
+                <li>{{ startup.fields.Alignment }}</li>
+                <li>{{ startup.fields["Theme(s)"] }}</li>
+                <li>{{ startup.fields.Landscape }}</li>
+            </ul>
+        </div>
+    </div>
 </div>
