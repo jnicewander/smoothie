@@ -6,13 +6,20 @@
 button {
     display: inline-block;
     margin: 2rem;
-    padding: 1rem;
-    width: 150px;
-    /* min-height: 200px; */
+    padding: 0;
+    font-size: 50px;
+    opacity: 0.5;
+    width: 400px;
+    min-height: 300px;
     font-weight: bold;
-    color:black;
+    color:rgb(255, 255, 255);
     white-space: normal;
     border: none;
     box-shadow: 1px 4px 10px rgb(131, 131, 131);
+    background-size: cover;
+    border-radius: 10px;
+    text-shadow: 2px 2px #000000;
 }
-
+button:hover{
+    opacity: 100%;
+}
