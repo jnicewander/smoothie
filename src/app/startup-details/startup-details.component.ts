@@ -15,40 +15,26 @@ export class StartupDetailsComponent implements OnInit {
   feedback: FeedbackRecords[];
   projects: ProjectsRecords[];
   modalView: boolean = false;
+
   constructor(private details: DetailsService, private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.details.getDetails.subscribe(response => {
-      this.getFeedbackDetails('Feedback', response.fields["Company Name"]);
-      this.getProjects('Projects', response.fields["Company Name"]);
-      this.toggleModal();
       this.startup = response;
     })
-  }
-  
-  getFeedbackDetails(route: string, startup: string): void {
-    this.apiService.getDetails(route, startup).subscribe((response: FeedbackResponse) => {
-      this.feedback = response.records;
+    this.details.setFeedbackDetails.subscribe((responseF: FeedbackResponse) => {
+      if (responseF) {
+        this.feedback = responseF.records;
+        console.log(this.feedback);
+      }
     })
-  }
-  
-  getProjects(route: string, startup: string): void {
-    this.apiService.getDetails(route, startup).subscribe((response: ProjectsResponse) => {
-      this.projects = response.records;
-      this.mergeDetails();
+    this.details.setProjectDetails.subscribe((responseP: ProjectsResponse) => {
+      if (responseP) {
+        this.projects = responseP.records;
+        console.log(this.projects);
+      }
+      this.toggleModal();
     })
-  }
-
-  mergeDetails(): void {
-    if(this.feedback) {
-      this.feedback.forEach((record) => {
-        this.startup[record.fields["Your Organization"].toLowerCase() + ' feedback'] = record;
-    })
-    if(this.projects) {
-        this.startup['projects'] = this.projects;
-    }
-    console.log(this.startup);
-    }
   }
 
   toggleModal() {
