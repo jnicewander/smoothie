@@ -20,8 +20,9 @@ export class ThemeCardComponent implements OnInit {
   }
 
   onSubmit(value: string) {
-    this.search.searchQuery.emit(value.toLowerCase());
+    this.search.searchQuery.emit({query: value.toLowerCase()});
   }
+  
   addThemeImg(theme): object {
     if (theme === 'The Good Life') {
       return {"background-image":"url('../../assets/images/theGoodLife.jpg\')"};
