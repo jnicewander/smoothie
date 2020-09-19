@@ -22,7 +22,15 @@ export class ThemeCardComponent implements OnInit {
   onSubmit(value: string) {
     this.search.searchQuery.emit(value.toLowerCase());
   }
-
+  addThemeImg(theme): object {
+    if (theme === 'The Good Life') {
+      return {"background-image":"url('../../assets/images/theGoodLife.jpg\')"};
+    } else if (theme === 'Robust Future') {
+      return {"background-image":"url('../../assets/images/robustFuture.jpg\')"};
+    } else {
+      return {"background-image":"url('../../assets/images/health.jpg\')"};
+    }
+  }
   // onSubmit(form: NgForm) {
   //   this.search.searchQuery.emit(form.value.query);
   // }
