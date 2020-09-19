@@ -3,35 +3,10 @@
     margin:0;
     padding:0;
 }
-.favButton{
-padding: 5px;
-border-radius: 5px;
-}
-li,a {
- 
-    font-weight: 500px;
-    font-size:16px;
-    color: white;
-    text-decoration: none;
-}
-
-.navLinks{
-    list-style: none;
-}
-
-li{
+.favButton {
     display: flex;
-}
-
-.navLinks li a{
-font-family: Montserrat;
-transition: all 0.3s ease 0s;
-color:  black;
-margin: 0 auto;
-font-size: 15px;
-margin-bottom: 10px;
-}
-
-.navLinks li a:hover{
-    color: darkblue;
-}
+    justify-content: center;
+    padding: 5px;
+    border-radius: 5px;
+    
+  }
