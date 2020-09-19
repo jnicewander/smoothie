@@ -4,32 +4,41 @@
     <app-theme-card theme='Robust Future'></app-theme-card>
     <app-theme-card theme='Health Beyond The Hospital'></app-theme-card>
 </div>
-
-<ul class="headings" *ngIf='startups'>
-    <li class='col-1'>
-        <h2>Company Name</h2>
-    </li>
-    <li class='col-2'>
-        <h2>Summary</h2>
-    </li>
-    <li class='col-3'>
-        <h2>Theme(s)</h2>
-    </li>
-</ul>
-<ul *ngFor='let startup of startups' (click)='showDetails(startup)'>
-    <!-- See MasterList - Fields interface for key names -->
-    <li class='col-1'>
-        <span class="mobile-heading">Company</span>
-        <span>{{ startup.fields["Company Name"] }}</span>
-    </li>
-    <li class='col-2'>
-        <span class="mobile-heading">Summary</span>
-        <span>{{ startup.fields["Two Line Company Summary"] }}</span>
-    </li>
-    <li class='col-3'>
-        <span class="mobile-heading">Theme(s)</span>
-        <span>{{ startup.fields["Theme(s)"] }}</span>
-    </li>
-    <li><button (click)="addFavorite(startup)">Add to Favorites</button></li>
-</ul>
+<div *ngIf='startups'>
+    <ul class="row headings">
+        <li class='col-1'>
+            <h2>Company Name</h2>
+        </li>
+        <li class='col-2'>
+            <h2>Summary</h2>
+        </li>
+        <li class='col-3'>
+            <h2>Theme(s)</h2>
+        </li>
+    </ul>
+</div>
+<div *ngFor='let startup of startups | concat: matchedProperties; index as i ' (click)='showDetails(startup)'>
+    <ul class="row">
+        <!-- See MasterList - Fields interface for key names -->
+        <li class='col-1'>
+            <span class="mobile-heading">Company</span>
+            <span>{{ startup.fields["Company Name"] }}</span>
+        </li>
+        <li class='col-2'>
+            <span class="mobile-heading">Summary</span>
+            <span>{{ startup.fields["Two Line Company Summary"] }}</span>
+        </li>
+        <li class='col-3'>
+            <span class="mobile-heading">Theme(s)</span>
+            <span>{{ startup.fields["Theme(s)"] }}</span>
+        </li>
+        <li class='col-4'>
+            <button (click)="addFavorite(startup)">Add to Favorites</button>
+        </li>
+        <li class='col-5'>
+            <span>Matched Fields: </span>
+            <span>{{ startup.matches }}</span>
+        </li>
+    </ul>
+</div>
 <button (click)='next()'>NEXT</button>
