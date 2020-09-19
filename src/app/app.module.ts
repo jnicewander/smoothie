@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ThemeCardComponent } from './theme-card/theme-card.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { StartupDetailsComponent } from './startup-details/startup-details.component';
+import { ConcatPipe } from './concat.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { StartupDetailsComponent } from './startup-details/startup-details.compo
     ThemeCardComponent,
     SearchBarComponent,
     StartupDetailsComponent,
-    routingComponent
+    routingComponent,
+    ConcatPipe
   ],
   imports: [
     BrowserModule,
