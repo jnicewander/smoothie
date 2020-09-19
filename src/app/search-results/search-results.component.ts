@@ -13,44 +13,25 @@ import { FavoritesService } from '../services/favorites.service'
 export class SearchResultsComponent implements OnInit {
   startups: MasterListRecords[];
   offsetValues: string[] = [];
-  matchedProperties = [];
+  matchedProperties: string[];
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
-    this.search.searchQuery.subscribe((query) => {
-      this.getData(query);
-    })
-  }
-
-  getData(query, offset?: string) {
-    this.api.getTableData(query, offset).subscribe((response: MasterListResponse) => {
-      this.offsetValues.push(response.offset);
+    this.search.searchResults.subscribe((response: MasterListResponse) => {
       this.startups = response.records;
-      console.log(this.startups);
-      this.appendSearchMatches(query);
+      this.offsetValues.push(response.offset);
+    })
+    this.search.matchedProps.subscribe((response) => {
+      this.matchedProperties = response;
     })
   }
 
-  appendSearchMatches(query) {
-    if(query) {
-      this.matchedProperties = [];
-      let matches = [];
-      this.startups.forEach(obj => {
-        for (let [key, value] of Object.entries(obj.fields)) {
-          if (value.toLowerCase().includes(query.toLowerCase())) {
-            matches.push(`${key}`);
-          }
-        }
-        let merged = matches.join(', ')
-        this.matchedProperties.push(merged);
-        matches = [];
-      })
-      console.log(this.matchedProperties);
-    }
-  }
 
   next() {
-    this.getData(null, this.offsetValues[this.offsetValues.length - 1]);
+    this.api.getTableData(null, this.offsetValues[this.offsetValues.length - 1]).subscribe((response: MasterListResponse) => {
+      this.startups = response.records;
+      this.offsetValues.push(response.offset);
+    });
   }
 
   showDetails(startup) {
