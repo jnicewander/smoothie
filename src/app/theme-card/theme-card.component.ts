@@ -32,18 +32,5 @@ export class ThemeCardComponent implements OnInit {
       return {"background-image":"url('../../assets/images/health.jpg\')"};
     }
   }
-  // onSubmit(form: NgForm) {
-  //   this.search.searchQuery.emit(form.value.query);
-  // }
- 
-  // showDetails(startup) {
-  //   this.detailsService.getDetails.emit(startup);
-  //   // add routing to display startup-detail component in here.
-  // }
-
-  // addFavorite(startup){
-  //   this.favoritesService.addFavorite(startup)
-  // }
-
 
 }
