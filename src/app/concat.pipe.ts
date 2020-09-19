@@ -13,5 +13,4 @@ export class ConcatPipe implements PipeTransform {
     }
     return startupArray;
   }
-
 }
