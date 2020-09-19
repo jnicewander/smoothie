@@ -14,7 +14,7 @@ export class SearchService {
   constructor(private apiService: ApiService) {
     this.searchQuery.subscribe(response => {
       this.apiService.getTableData(response.query).subscribe((responseA: MasterListResponse) => {
-        if (response.query) {
+        if (responseA) {
           this.matchedProperties = [];
           let matches = [];
           responseA.records.forEach((obj) => {
