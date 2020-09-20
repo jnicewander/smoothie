@@ -1,18 +1,26 @@
+.container {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 95vw;
+    border-radius: 5px;
+    background-color: rgb(4, 56, 80);
+}
 
 .row {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 90vw;
-    margin: .5rem auto;
+    margin: 1rem auto;
     padding: .5rem;
-    border: 1px solid darkslategray;
-    box-shadow: 0 1px 5px darkgrey;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
     background-color: rgb(17, 92, 128);
     color: white;
+
 }
 
-.headings {
+.heading {
     display: none;
 }
 
@@ -25,7 +33,6 @@ span {
 }
 
 /* CSS selector applies styles to any class that begins with col- */
-/* 4 fields */
 [class^='col-']  {
     flex-basis: 16%;
 }
@@ -50,9 +57,17 @@ span {
     font-family: 'Open Sans Condensed', sans-serif;
 }
 
+.btn-container {
+    text-align: center;
+}
+
 @media only screen and (min-width: 768px) {
-    .headings {
+    .heading {
         display: flex;
+        flex-direction: row;
+        max-width: 90vw;
+        margin: .5rem auto;
+        color: white;
     }
 
     .row {
