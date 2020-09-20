@@ -1,26 +1,53 @@
 header {
   display: flex;
-  flex-direction: row;
-  align-items: baseline;
+  flex-direction: column;
+  justify-content: center;
   padding: 1rem;
   color: white;
+  
   background-color: rgb(17, 92, 128);
 }
 
 .siteTitle {
+  display: flex;
+  justify-content: center;
   font-family: "Josefin Sans", sans-serif;
   color: white;
   font-size: 2rem;
+  align-items: center;
+  
+}
+.siteTitle:hover{
+color:rgb(0, 0, 0);
+}
+a:hover{
+  color: rgb(0, 0, 0)
 }
 
 .navigation {
   margin: 0 1rem;
+  align-items: center;
 }
 
 li, a {
-  font-weight: 500px;
+  display: flex;
+  justify-content: center;
   font-size: 16px;
+  margin: .3rem;
   color: white;
   text-decoration: none;
 }
 
+
+@media only screen and (min-width: 768px) {
+header{
+  flex-direction: row;
+  justify-content: flex-start;
+}
+a {
+  
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+}
+}

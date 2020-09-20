@@ -4,7 +4,9 @@ html, body {
     padding: 0;
     font-size: 16px;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url("/assets/images/pageImage.jpg");
+    height: 400px;
+    width: 100%;
+    background-image: url("/assets/images/background.jpg");
     background-size: cover;
 }
 
