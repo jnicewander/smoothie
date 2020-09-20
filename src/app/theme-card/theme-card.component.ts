@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output, HostBinding } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ApiService } from '../services/api.service';
 import { MasterListResponse, MasterListRecords } from '../interfaces/master-list-response';
@@ -11,9 +11,8 @@ import { FavoritesService } from '../services/favorites.service'
   styleUrls: ['./theme-card.component.css']
 })
 export class ThemeCardComponent implements OnInit {
-  // startups: MasterListRecords[];
   @Input() theme: string;
-
+  
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
   
   ngOnInit(): void {
@@ -25,11 +24,11 @@ export class ThemeCardComponent implements OnInit {
   
   addThemeImg(theme): object {
     if (theme === 'The Good Life') {
-      return {"background-image":"url('../../assets/images/theGoodLife.jpg\')"};
+      return {"background-image":"url('../../assets/images/theGoodLife.jpg')"};
     } else if (theme === 'Robust Future') {
-      return {"background-image":"url('../../assets/images/robustFuture.jpg\')"};
+      return {"background-image":"url('../../assets/images/robustFuture.jpg')"};
     } else {
-      return {"background-image":"url('../../assets/images/health.jpg\')"};
+      return {"background-image":"url('../../assets/images/health.jpg')"};
     }
   }
 

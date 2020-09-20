@@ -1,3 +1,5 @@
-<div class="button-container">
-    <button (click)='onSubmit(theme)'[ngStyle]='addThemeImg(theme)'>{{ theme }}</button>
+<div class="theme-container">
+    <div class='theme' (click)='onSubmit(theme)' [ngStyle]='addThemeImg(theme)'>
+        <div class='theme-front'>{{ theme }}</div>
+    </div>
 </div> 

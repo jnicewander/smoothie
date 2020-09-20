@@ -1,6 +1,24 @@
+:host {
+    margin: 0 auto;
+    text-align: center;
+}
+
 .card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.themes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-title {
+    color: white;
+    margin: 1rem;
 }
