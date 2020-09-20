@@ -20,7 +20,7 @@ export class ThemeCardComponent implements OnInit {
   }
 
   onSubmit(value: string) {
-    this.search.searchQuery.emit({query: value.toLowerCase()});
+    this.search.submitData({query: value.toLowerCase()});
   }
   
   addThemeImg(theme): object {
