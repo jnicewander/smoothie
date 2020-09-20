@@ -1,0 +1,62 @@
+.list-container {
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 95vw;
+    border-radius: 5px;
+    background-color: rgb(4, 56, 80);
+}
+
+.heading {
+    display: none;
+}
+
+li {
+    display: flex;
+}
+
+span {
+    flex-basis: 50%;
+}
+
+/* CSS selector applies styles to any class that begins with col- */
+[class^='col-']  {
+    flex-basis: 16%;
+}
+
+.col-2 {
+    flex-basis: 50%;
+}
+
+.col-4 {
+    flex-basis: 18%;
+}
+
+.col-5 {
+    font-size: .7rem;
+    flex-basis: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+    .heading {
+        display: flex;
+        flex-direction: row;
+        max-width: 90vw;
+        margin: .5rem auto;
+        color: white;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .mobile-heading {
+        display: none;
+    }
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+
+}
