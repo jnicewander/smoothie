@@ -1,16 +1,11 @@
-<!-- <base href="/"> -->
+<div class='form-container'>
+    <form #formID="ngForm" (ngSubmit)="onSubmit(formID)">
+        <input type="text" class="text-input" id="searchInput1" placeholder="Enter a keyword..." name="query" aria-label="Keyword Search" ngModel/>
+        <button type="submit" class="search-btn" onclick="this.blur()">Search</button>
+    </form>
+    <span class="subheading"> A Smooth Way To Search For Startups</span>
+</div>
 
-<!-- <head>
-    <link rel="stylesheet" href="search-bar.component.css">
-</head>
-<body> -->
-
-<h2 class="page"> A Smooth Way To Search For Startups</h2>
-
-<form #formID="ngForm" (ngSubmit)="onSubmit(formID)">
-    <input type="text" class="form-control" id="searchInput1" placeholder="search..." name="query" ngModel/>
-    <button type="submit" class="searchBtn">Search</button>
-</form>
  <!-- <form class="form-container"#g="ngForm" (ngSubmit)="getCriteria(g)">
     <label for="advancedcriteria">Advanced Criteria</label>
 <div>
