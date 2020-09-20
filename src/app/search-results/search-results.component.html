@@ -1,46 +1,24 @@
-<h2 class="themeCardTitle">Startup Company Themes</h2>
-<div class='card-container'>
-    <app-theme-card theme='The Good Life'></app-theme-card>
-    <app-theme-card theme='Robust Future'></app-theme-card>
-    <app-theme-card theme='Health Beyond The Hospital'></app-theme-card>
-</div>
-<div class='container' *ngIf='startups'>
-    <ul class="heading">
+<div class='container' *ngIf='singleStartup'>
+    <ul class="row">
+        <!-- See MasterList - Fields interface for key names -->
         <li class='col-1'>
-            <h2>Company Name</h2>
+            <span class="mobile-heading">Company</span>
+            <span>{{ singleStartup.fields["Company Name"] }}</span>
         </li>
         <li class='col-2'>
-            <h2>Summary</h2>
+            <span class="mobile-heading">Summary</span>
+            <span>{{ singleStartup.fields["Two Line Company Summary"] }}</span>
         </li>
         <li class='col-3'>
-            <h2>Theme(s)</h2>
+            <span class="mobile-heading">Theme(s)</span>
+            <span>{{ singleStartup.fields["Theme(s)"] }}</span>
+        </li>
+        <li class='col-4'>
+            <button (click)="addFavorite(singleStartup)">Add to Favorites</button>
+        </li>
+        <li class='col-5'>
+            <span>Matched Fields: <span></span> {{ singleStartup.matches }}</span>
         </li>
     </ul>
-    <div *ngFor='let startup of startups | concat: matchedProperties; index as i ' (click)='showDetails(startup)'>
-        <ul class="row">
-            <!-- See MasterList - Fields interface for key names -->
-            <li class='col-1'>
-                <span class="mobile-heading">Company</span>
-                <span>{{ startup.fields["Company Name"] }}</span>
-            </li>
-            <li class='col-2'>
-                <span class="mobile-heading">Summary</span>
-                <span>{{ startup.fields["Two Line Company Summary"] }}</span>
-            </li>
-            <li class='col-3'>
-                <span class="mobile-heading">Theme(s)</span>
-                <span>{{ startup.fields["Theme(s)"] }}</span>
-            </li>
-            <li class='col-4'>
-                <button (click)="addFavorite(startup)">Add to Favorites</button>
-            </li>
-            <li class='col-5'>
-                <span>Matched Fields: {{ startup.matches }}</span>
-            </li>
-        </ul>
-    </div>
-    <div class='btn-container'>
-        <button (click)='next()'>NEXT</button>
-    </div>
 </div>
 
