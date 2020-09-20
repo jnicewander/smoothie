@@ -1,58 +1,26 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  /* background-color: lightgray; */
-}
-.titlePitch {
-  font-family: "Josefin Sans", sans-serif;
-  display: flex;
-  justify-content: center;
-  padding-top: 10px;
-  color: white;
-  font-size: 20px;
-}
-
 header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: baseline;
+  padding: 1rem;
+  color: white;
   background-color: rgb(17, 92, 128);
 }
+
 .siteTitle {
-  margin: 12px;
-  display: flex;
-  justify-content: flex-start;
   font-family: "Josefin Sans", sans-serif;
   color: white;
-  font-size: 28px;
+  font-size: 2rem;
 }
 
-.favButton{
-  color: black;
-   margin-left:20px;
-   padding:3px;
-   border-radius: 5px;
-   background-color: silver;
+.navigation {
+  margin: 0 1rem;
 }
-li,a {
+
+li, a {
   font-weight: 500px;
   font-size: 16px;
   color: white;
   text-decoration: none;
 }
 
-.navLinks {
-  list-style: none;
-}
-
-.navLinks li a {
-  font-family: Montserrat;
-  transition: all 0.3s ease 0s;
-  color: black;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-.navLinks li a:hover {
-  color: darkblue;
-}
