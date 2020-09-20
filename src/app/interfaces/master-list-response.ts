@@ -6,7 +6,8 @@ export interface MasterListResponse {
 export interface MasterListRecords {
     id: string,
     fields: MasterListFields,
-    createdTime: string
+    createdTime: string,
+    matches: string[]
 }
 
 export interface MasterListFields {
