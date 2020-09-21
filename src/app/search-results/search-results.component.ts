@@ -12,10 +12,13 @@ import { FavoritesService } from '../services/favorites.service'
 })
 export class SearchResultsComponent implements OnInit, OnChanges {
   @Input() singleStartup: MasterListRecords;
+  aligned: string;
+  imgURL: string;
 
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -27,7 +30,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     this.favoritesService.addFavorite(startup)
   }
 
-  setImgSrc() {
-    
+  imgSrc(aligned) {
+    return `../../assets/images/${aligned.toLowerCase().trim()}.png`;
   }
 }

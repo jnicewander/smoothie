@@ -1,26 +1,50 @@
+h1 {
+    font-size: 1rem;
+}
+
+.italicize {
+    font-style: italic;
+}
+
+.fa-star {
+    color: white;
+}
+
 .container {
-    width: 100%;
+    width: 95vw;
+    max-width: 100vw;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    background-color: red;
-    justify-content: space-evenly;
+    margin: .5rem 0;
+    color: white;
+    background-color: rgb(17, 92, 128);
 }
 
 .columns {
-    flex-basis: 100%;
-    background-color: blue;
+
     display: flex;
     flex-direction: row;
 }
 
 [class^='col-']  {
-    flex-basis: 50%;
-    background-color: green;
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    background-color: rgb(34, 143, 194);
+}
+
+.col-1 {
+    border-right: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .col-2 {
-    display: flex;
-    flex-direction: column;
+    font-size: .8rem;
+    flex-basis: 60%;
     flex: 1;
 }
 
@@ -34,7 +58,7 @@
 }
 
 .categories {
-    text-align: right;
+    text-align: left;
 }
 
 .location {
@@ -42,9 +66,57 @@
     flex-direction: row;
 }
 
-.matches {
-    background-color: hotpink;
+.alignment {
+    padding: .5rem;
+    border-bottom: 1px solid white;
+    background-color: rgb(34, 143, 194);
+    display: flex;
+    flex-direction: row;
 }
+
+.img-box {
+    margin: 0 auto;
+    padding: .1rem;
+    text-align: center;
+    height: 10vh;
+    max-height: 10vh;
+    max-width: 10vh;
+}
+
+.aligned-img {
+    max-width: 100%;
+    max-height: 100%;
+    min-height: 100%;
+    object-fit: contain;
+    vertical-align: middle;
+    background-color: white;
+}
+
+
+.matches {
+    font-size: .5rem;
+    border: 1px, 1px, solid black;
+}
+
+@media only screen and (min-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .col-2 {
+        font-size: initial;
+    }
+
+    .img-box {
+        margin: 0 auto;
+        padding: .1rem;
+        text-align: center;
+        height: 15vh;
+        max-height: 15vh;
+        max-width: 15vh;
+    }
+}
+
 
 /* *{
     font-family: 'Playfair Display', serif;
