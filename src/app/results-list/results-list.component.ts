@@ -18,6 +18,8 @@ export class ResultsListComponent implements OnInit {
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
+      this.startups = this.search.searchResults.records;
+      this.query = this.search.query;
       this.search.sendIt.subscribe(res => {
         this.offsetValues = [];
         this.query = res.query;
