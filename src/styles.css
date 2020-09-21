@@ -4,10 +4,10 @@ html, body {
     padding: 0;
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
+    /* height: 100vh; */
     background-image: url("/assets/images/background.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
 
 }
 
