@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ApiService } from '../services/api.service';
 import { MasterListResponse, MasterListRecords } from '../interfaces/master-list-response';
@@ -18,19 +18,21 @@ export class ResultsListComponent implements OnInit {
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
-    if (this.search.searchResults) {
-      this.query = this.search.query;
-      console.log(this.query);
-      this.startups = this.search.searchResults.records;
-      this.offsetValues.push(this.search.searchResults.offset);
-    }
+      this.search.sendIt.subscribe(res => {
+        this.offsetValues = [];
+        this.query = res.query;
+        this.startups = res.result.records;
+        this.offsetValues.push(res.result.offset);
+      })
   }
 
   next() {
-    this.api.getTableData(null, this.offsetValues[this.offsetValues.length - 1]).subscribe((response: MasterListResponse) => {
-      this.startups = response.records;
-      this.offsetValues.push(response.offset);
-    });
+    if(this.offsetValues) {
+      this.api.getTableData(null, this.offsetValues[this.offsetValues.length - 1]).subscribe((response: MasterListResponse) => {
+        this.startups = response.records;
+        this.offsetValues.push(response.offset);
+      });
+    }
   }
 
   showDetails(startup) {
