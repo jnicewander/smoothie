@@ -1,5 +1,5 @@
 <div class='list-container' *ngIf='startups'>
-    <ul class="heading">
+    <!-- <ul class="heading">
         <li class='col-1'>
             <h2>Company Name</h2>
         </li>
@@ -12,7 +12,7 @@
         <li class='col-4'>
             <h2>Favorite</h2>
         </li>
-    </ul>
+    </ul> -->
     <app-search-results *ngFor='let startup of startups; index as i' [singleStartup]='startup | concat: query' (click)='showDetails(startup)'></app-search-results>
     <div class='btn-container'>
         <button (click)='next()'>NEXT</button>
