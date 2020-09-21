@@ -4,7 +4,6 @@ header {
   justify-content: center;
   padding: 1rem;
   color: white;
-  
   background-color: rgb(17, 92, 128);
 }
 
@@ -40,14 +39,14 @@ li, a {
 
 
 @media only screen and (min-width: 768px) {
-header{
-  flex-direction: row;
-  justify-content: flex-start;
-}
-a {
-  
-  font-size: 16px;
-  color: white;
-  text-decoration: none;
-}
+  header {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+  }
 }
