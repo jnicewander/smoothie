@@ -1,3 +1,6 @@
+*{
+    font-family: 'Playfair Display', serif;
+}
 .row {
     display: flex;
     flex-direction: column;
@@ -53,6 +56,9 @@ span {
     text-align: center;
 }
 
+
+
+
 @media only screen and (min-width: 768px) {
     .heading {
         display: flex;
@@ -73,7 +79,9 @@ span {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        
     }
-
+.fab{
+    color: red;
+    font-size: 50px;
+}
 }

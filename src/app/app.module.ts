@@ -16,6 +16,7 @@ import { StartupDetailsComponent } from './startup-details/startup-details.compo
 import { ConcatPipe } from './concat.pipe';
 import { MainViewComponent } from './main-view/main-view.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,7 @@ import { MainViewComponent } from './main-view/main-view.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

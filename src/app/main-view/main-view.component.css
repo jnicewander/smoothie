@@ -18,9 +18,19 @@
     justify-content: center;
 }
 
+
 .theme-title {
     color: rgb(255, 255, 255);
-    margin: 1rem;
+    margin-top: 2rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
+}
+.searchTitle{
+    font-size:2rem;
+    color: White;
+    margin-top:2rem;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 4px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -31,6 +41,12 @@
         align-items: center;
         justify-content: center;
     }
-    
+    .searchTitle{
+        font-size:3rem;
+        color: White;
+        margin-top:3rem;
+        font-family: 'Bebas Neue', cursive;
+        letter-spacing: 4px;
+    }
 }
 

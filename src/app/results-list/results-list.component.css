@@ -3,7 +3,7 @@
     padding: 2rem;
     max-width: 95vw;
     border-radius: 5px;
-    background-color: rgb(4, 56, 80);
+   
 }
 
 .heading {
@@ -51,6 +51,7 @@ span {
 
     .mobile-heading {
         display: none;
+        font-size: 20px;
     }
     .card-container {
         display: flex;

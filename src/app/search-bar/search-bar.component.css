@@ -15,7 +15,8 @@
 }
 
 .search-btn {
-    flex-basis: 25%;
+    flex-basis: 20%;
+    margin-top:2rem;
     border: none;
     border-radius: 0 15px 15px 0;
     padding:.5rem;
@@ -27,9 +28,11 @@
         flex-basis: 75%;
         border: none;
     }
-    
+    #searchInput1{
+        width : 40em;
+    }
     .search-btn {
-        flex-basis: 25%;
+        flex-basis: 85%;
         border: none;
         border-radius: 0 15px 15px 0;
     }
