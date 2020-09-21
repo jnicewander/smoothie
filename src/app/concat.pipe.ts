@@ -6,6 +6,7 @@ import { MasterListRecords } from './interfaces/master-list-response';
 })
 export class ConcatPipe implements PipeTransform {
   matchedProperties: string[];
+  alignedWith: string[];
   transform(startup: MasterListRecords, query: string): MasterListRecords {
     if (startup) {
       this.matchedProperties = [];
@@ -15,12 +16,15 @@ export class ConcatPipe implements PipeTransform {
           matches.push(key);
         }
       }
+      if (startup.fields.Alignment) {
+        startup.fields['Alignment'] = startup.fields.Alignment.split(',');
+      }
       let merged = matches.join(', ')
       this.matchedProperties.push(merged);
       matches = [];
       startup['matches'] = this.matchedProperties;
     }
-    console.log(startup);
+    console.log(startup.fields.Alignment);
     return startup;
   }
 }
