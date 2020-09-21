@@ -30,6 +30,7 @@ span {
 /* CSS selector applies styles to any class that begins with col- */
 [class^='col-']  {
     flex-basis: 16%;
+
 }
 
 .col-2 {
