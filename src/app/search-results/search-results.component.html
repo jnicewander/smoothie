@@ -20,20 +20,29 @@
                     <li>
                         <span><b>Theme(s):</b></span><br>
                         <span>{{ singleStartup.fields["Theme(s)"] }}</span>
+                        <span *ngIf='!singleStartup.fields["Theme(s)"]'>No Theme Fields Found.</span>
                     </li>
                     <li>
                         <span><b>Landscape:</b></span><br>
                         <span>{{ singleStartup.fields["Landscape"] }}</span>
+                        <span *ngIf='!singleStartup.fields["Landscape"]'>No Landscape Fields Found.</span>
                     </li>
                     <li>
                         <span><b>Technology Areas:</b></span><br>
                         <span>{{ singleStartup.fields["Technology Areas"] }}</span>
+                        <span *ngIf='!singleStartup.fields["Technology Areas"]'>No Technology Areas Found.</span>
                     </li>
                 </ul>
+                <div class='alignment desktop'>
+                    <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
+                        <img class='aligned-img' [src]="imgSrc(aligned)" alt="company logo">
+                    </div>
+                    <div class='alignment' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class='alignment'>
+    <div class='alignment mobile'>
         <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
                 <img class='aligned-img' [src]="imgSrc(aligned)" alt="company logo">
         </div>
