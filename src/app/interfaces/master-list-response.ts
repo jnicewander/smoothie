@@ -20,9 +20,10 @@ export interface MasterListFields {
     "State": string,
     "Country": string,
     "Two Line Company Summary": string,
-    "Alignment": string,
+    "Alignment": any,
     "Theme(s)": string,
     "Technology Areas": string,
+    "Landscape": string,
     "Uniqueness": string,
     "Team": string,
     "Raised": string
