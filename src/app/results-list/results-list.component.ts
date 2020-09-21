@@ -4,7 +4,7 @@ import { ApiService } from '../services/api.service';
 import { MasterListResponse, MasterListRecords } from '../interfaces/master-list-response';
 import { DetailsService } from '../services/details.service';
 import { FavoritesService } from '../services/favorites.service';
-import { ConcatPipe } from '../concat.pipe';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-results-list',
@@ -15,9 +15,10 @@ export class ResultsListComponent implements OnInit {
   startups: MasterListRecords[];
   offsetValues: string[] = [];
   query: string;
-  constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
+  constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService, private router: Router) {}
 
   ngOnInit(): void {
+    if (this.search.searchResults) {
       this.startups = this.search.searchResults.records;
       this.query = this.search.query;
       this.search.sendIt.subscribe(res => {
@@ -26,6 +27,9 @@ export class ResultsListComponent implements OnInit {
         this.startups = res.result.records;
         this.offsetValues.push(res.result.offset);
       })
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
   next() {
