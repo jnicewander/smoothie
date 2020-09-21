@@ -1,7 +1,55 @@
-*{
-    font-family: 'Playfair Display', serif;
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: red;
+    justify-content: space-evenly;
 }
+
+.columns {
+    flex-basis: 100%;
+    background-color: blue;
+    display: flex;
+    flex-direction: row;
+}
+
+[class^='col-']  {
+    flex-basis: 50%;
+    background-color: green;
+}
+
+.col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .row {
+    display: flex;
+    flex-direction: row;
+}
+
+.row-col {
+    flex-basis: 50%;
+}
+
+.categories {
+    text-align: right;
+}
+
+.location {
+    display: flex;
+    flex-direction: row;
+}
+
+.matches {
+    background-color: hotpink;
+}
+
+/* *{
+    font-family: 'Playfair Display', serif;
+} */
+/* .row {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -25,10 +73,10 @@ li {
 
 span {
     flex-basis: 50%;
-}
+} */
 
 /* CSS selector applies styles to any class that begins with col- */
-[class^='col-']  {
+/* [class^='col-']  {
     flex-basis: 16%;
 
 }
@@ -85,4 +133,4 @@ span {
     color: red;
     font-size: 50px;
 }
-}
+} */

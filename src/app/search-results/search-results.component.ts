@@ -27,4 +27,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     this.favoritesService.addFavorite(startup)
   }
 
+  setImgSrc() {
+    
+  }
 }

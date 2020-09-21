@@ -1,6 +1,36 @@
-<div class='container' *ngIf='singleStartup'>
+<div class="container" *ngIf='singleStartup'>
+    <div class='columns'>
+        <div class="favorite col-1">
+            <button (click)="addFavorite(singleStartup)">Add to Favorites</button>
+        </div>
+        <div class="col-2">
+            <div class="row">
+                <ul class="row-col">
+                    <li><h1>{{ singleStartup.fields["Company Name"] }}</h1></li>
+                    <li><span>{{ singleStartup.fields["Company Website"] }}</span></li>
+                    <li>
+                        <ul class="location">
+                            <li *ngIf='singleStartup.fields["City"]'>{{ singleStartup.fields["City"] }}, </li>
+                            <li *ngIf='singleStartup.fields["State"]'>{{ singleStartup.fields["State"] }}, </li>
+                            <li>{{ singleStartup.fields["Country"] }}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class='categories row-col'>
+                    <li>Alignment: {{ singleStartup.fields["Alignment"] }}</li>
+                    <!-- set a img tag for each company, call function to set img source if contained in current startup. -->
+                    <li>Theme(s): {{ singleStartup.fields["Theme(s)"] }}</li>
+                    <li>Landscape: {{ singleStartup.fields["Landscape"] }}</li>
+                </ul>
+            </div>
+            <div class='matches'>Matched Properties: {{ singleStartup.matches }}</div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <div class='container' *ngIf='singleStartup'>
     <ul class="row">
-        <!-- See MasterList - Fields interface for key names -->
         <li class='col-1'>
             <span class="mobile-heading">Company</span>
             <span>{{ singleStartup.fields["Company Name"] }}</span>
@@ -21,4 +51,4 @@
         </li>
     </ul>
 </div>
-
+ -->
