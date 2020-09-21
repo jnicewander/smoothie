@@ -17,6 +17,7 @@ export interface MasterListFields {
     "Scout": string,
     "Company Website": string,
     "City": string,
+    "State": string,
     "Country": string,
     "Two Line Company Summary": string,
     "Alignment": string,
