@@ -11,6 +11,7 @@
 }
 
 .themes {
+    margin:2rem;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

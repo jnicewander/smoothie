@@ -22,18 +22,14 @@
     border-radius: 5px;
 } */
 
-.button-container {
-    display: flex;
-}
-
-button {
+/* .theme {
     display: inline-block;
-    margin: .3rem;
-    padding: 0;
+    margin: .4rem;
+    padding: .5rem;
     font-size: 15px;
     opacity: 0.7;
-    width: 100px;
-    min-height: 80px;
+    width: 6rem;
+    min-height: 6rem;
     font-weight: bold;
     color:rgb(255, 255, 255);
     white-space: normal;
@@ -41,35 +37,61 @@ button {
     box-shadow: 1px 4px 10px rgb(0, 0, 0);
     background-size: cover;
     text-shadow: 2px 2px #000000;
+    border-radius: 10px;
 }
-button:hover{
+
+.theme:hover{
     opacity: 100%;
-}
+} */
 
 
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768px) {
 
-.button-container {
-    display: flex;
-}
-
-button {
-    display: inline-block;
-    margin: 2rem;
-    padding: 0;
+.theme { 
     font-size: 25px;
-    opacity: 0.7;
-    width: 280px;
-    min-height: 200px;
-    font-weight: bold;
-    color:rgb(255, 255, 255);
-    white-space: normal;
-    border: none;
-    box-shadow: 2px 4px 10px rgb(0, 0, 0);
-    background-size: cover;
-    text-shadow: 2px 2px #000000;
+    width: 21rem;
+    min-height: 15rem;
+  
 }
-button:hover{
+.theme:hover{
     opacity: 100%;
 }
 }
+ */
+
+ .theme-container{
+    height:15vw;
+    width: 15vw;
+    margin:1rem;
+    border-radius: 8px 80px;
+    
+ }
+ .theme{
+    height:100%;
+    width: 100%;
+    background-size:cover;
+    position: relative;
+    background-position: center;
+    border-radius: 8px 80px;
+    box-shadow: 1px 4px 10px rgb(0, 0, 0);
+ }
+ .theme-front{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-size: 2rem;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 8px 80px;
+    font-family:'Bebas Neue', cursive;
+    letter-spacing: 4px;
+ }
+ .theme-front:hover{
+background-color: rgba(0,0,0,0);
+color: black;
+text-shadow: 1px 1px white, -1px -1px white;
+background-color: rgba(255, 255, 255, 0.267);
+ }
