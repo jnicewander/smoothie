@@ -1,13 +1,5 @@
-/* host targets the parent element of the component */
-:host {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
 .search-title {
     color: White;
-    margin-top: 1rem;
     letter-spacing: 4px;
 }
 
