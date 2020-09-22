@@ -1,6 +1,6 @@
 <div class='form-container'>
     <form #formID="ngForm" (ngSubmit)="onSubmit(formID)">
-        <input type="text" class="text-input" id="searchInput1" placeholder="Enter a keyword..." name="query" aria-label="Keyword Search" ngModel/>
+        <input type="text" class="text-input" placeholder="Enter a keyword..." name="query" aria-label="Keyword Search" ngModel/>
         <button type="submit" class="search-btn" onclick="this.blur()">Search</button>
     </form>
     <span class='search-title'>A smooth way to search for startups</span>

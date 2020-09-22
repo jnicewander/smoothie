@@ -1,3 +1,16 @@
+.form-container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: .5rem;
+}
+
 .search-title {
     color: White;
     letter-spacing: 4px;
@@ -13,13 +26,35 @@
     flex-basis: 25%;
     border: none;
     border-radius: 0 20px 5px 0;
+    color: white;
+    font-weight: 700;
+    background-color: rgb(10, 64, 88);
     padding: .8rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 370px) {
+    /* For the two phones smaller than 370px */
+    .text-input {
+        flex-basis: 100%;
+        margin-top: .2rem;
+    }
 
     .search-btn {
-        flex-basis: 100%;
+        flex-basis: 45%;
+        margin-top: .5rem;
+        border-radius: 5px 15px 5px 15px;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    .text-input {
+        margin-top: .2rem;
+    }
+
+    .search-btn {
+        margin-top: .5rem;
+        flex-basis: 45%;
+        border-radius: 5px 15px 5px 15px;
     }
 
     .search-btn:hover {
