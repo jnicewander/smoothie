@@ -28,6 +28,7 @@
     color: rgb(255, 255, 255);
     margin-top: 2rem;
     letter-spacing: 4px;
+    font-size: 2.3vw;
 }
 
 @media only screen and (min-width: 650px) {
@@ -37,13 +38,21 @@
     }
 
     .theme-colL {
-        flex-basis: 25vw;
+        display: flex;
+        justify-content: flex-end;
+        flex-basis: 10vw;
     }
 
     .theme-colR {
         display: flex;
         flex-direction: row;
-        flex-basis: 75vw;
+        justify-content: space-evenly;
+        flex-basis: 80vw;
+        flex-shrink: 0;
+    }
+
+    .hide {
+        visibility: hidden;
     }
 
     .theme-title {
@@ -52,4 +61,3 @@
     }
 
 }
-
