@@ -1,8 +1,8 @@
 .list-container {
-    margin: 0 auto;
+    margin: 2rem auto;
     max-width: 95vw;
-    border-radius: 5px;
-   
+    padding: .5rem 0;
+    background-color: rgb(17, 92, 128);
 }
 
 .heading {
