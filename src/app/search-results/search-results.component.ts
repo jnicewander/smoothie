@@ -26,11 +26,14 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     }
   }
 
-  addFavorite(startup){
+  addFavorite(startup, event){
+    event.stopPropagation();
     this.favoritesService.addFavorite(startup)
   }
 
   imgSrc(aligned) {
     return `../../assets/images/${aligned.toLowerCase().trim()}.png`;
   }
+
+  
 }

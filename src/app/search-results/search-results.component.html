@@ -1,7 +1,7 @@
 <div class="container" *ngIf='singleStartup'>
     <div class='columns'>
-        <div class=" col-1">
-            <a class='favorite' (click)="addFavorite(singleStartup)"><i class="far fa-star"></i></a>
+        <div class=" col-1" (click)="addFavorite(singleStartup, $event)">
+            <a class='favorite'><i class="far fa-star"></i></a>
         </div>
         <div class="col-2">
             <div class="row">
