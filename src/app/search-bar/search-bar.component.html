@@ -1,24 +1,8 @@
 <div class='form-container'>
+    <h2 class='search-title'>A smooth way to search for startups</h2>
     <form #formID="ngForm" (ngSubmit)="onSubmit(formID)">
         <input type="text" class="text-input" id="searchInput1" placeholder="Enter a keyword..." name="query" aria-label="Keyword Search" ngModel/>
         <button type="submit" class="search-btn" onclick="this.blur()">Search</button>
     </form>
 
 </div>
-
- <!-- <form class="form-container"#g="ngForm" (ngSubmit)="getCriteria(g)">
-    <label for="advancedcriteria">Advanced Criteria</label>
-<div>
-    <label for="city">City</label>
-    <input type="checkbox" id="city" name="city" ngModel>
-    <input type="text" placeholder="City..." id="cty" name="nname">
-    <label for="theme">Theme</label>
-    <input type="checkbox" id="theme" name="theme" ngModel>
-    <input type="text" placeholder="Theme..." id="thm" name="themes">
-    <label for="alignment">Alignment</label>
-    <input type="checkbox" id="alignment" name="alignment" ngModel>
-    <input type="text" placeholder="Alignment..." id="align" name="align">
-</div>
-</form> -->
-<!-- </body> -->
-
