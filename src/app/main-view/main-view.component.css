@@ -11,12 +11,18 @@
 }
 
 .themes {
-    margin:2rem;
+    /* margin:2rem; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (min-width: 650px) {
+    .themes {
+        flex-direction: row;
+    }
 }
 
 
