@@ -29,14 +29,12 @@
 .theme-title {
     color: rgb(255, 255, 255);
     margin-top: 2rem;
-    font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
 }
 .searchTitle{
     font-size:2rem;
     color: White;
     margin-top:2rem;
-    font-family: 'Bebas Neue', cursive;
     letter-spacing: 4px;
 }
 
@@ -52,7 +50,6 @@
         font-size:3rem;
         color: White;
         margin-top:3rem;
-        font-family: 'Bebas Neue', cursive;
         letter-spacing: 4px;
     }
 }
