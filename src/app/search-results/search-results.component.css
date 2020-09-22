@@ -1,24 +1,19 @@
-h1 {
-    font-size: 1rem;
-}
-
 .italicize {
     font-style: italic;
 }
 
 .fa-star {
+    font-size: 2rem;
     color: white;
 }
 
 .container {
     width: 95vw;
     max-width: 100vw;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
-    margin: .5rem 0;
+    margin: 1rem 0;
     color: white;
-    background-color: rgb(17, 92, 128);
 }
 
 .columns {
@@ -30,11 +25,12 @@ h1 {
 [class^='col-']  {
     display: flex;
     flex-direction: column;
-    padding: .5rem;
+    /* padding: .5rem; */
     background-color: rgb(34, 143, 194);
 }
 
 .col-1 {
+    flex-basis: 15%;
     border-right: 1px solid white;
     display: flex;
     flex-direction: column;
@@ -55,6 +51,16 @@ h1 {
 
 .row-col {
     flex-basis: 50%;
+    padding: .5rem;
+}
+
+.row-col>li {
+    margin: .5rem 0 0 0;
+}
+
+.heading {
+    font-size: 1rem;
+    margin: 0;
 }
 
 .categories {
@@ -66,12 +72,27 @@ h1 {
     flex-direction: row;
 }
 
+.right-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 50%;
+}
+
 .alignment {
     padding: .5rem;
-    border-bottom: 1px solid white;
     background-color: rgb(34, 143, 194);
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.null-data {
+    text-align: center;
+    border: none;
+    height: 10vh;
+    max-height: 10vh;
 }
 
 .mobile {
@@ -83,7 +104,8 @@ h1 {
 }
 
 .img-box {
-    margin: 0 auto;
+    border: none;
+    /* margin: 0 auto; */
     padding: .1rem;
     text-align: center;
     height: 10vh;
@@ -102,8 +124,9 @@ h1 {
 
 
 .matches {
-    font-size: .5rem;
-    border: 1px, 1px, solid black;
+    padding: 0 .2rem;
+    font-size: .7rem;
+    border-bottom: 1px solid white;
 }
 
 @media only screen and (min-width: 768px) {
@@ -113,6 +136,10 @@ h1 {
 
     .col-2 {
         font-size: initial;
+    }
+
+    .row-col {
+        flex-basis: 30%;
     }
 
     .img-box {

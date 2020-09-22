@@ -5,8 +5,8 @@
         </div>
         <div class="col-2">
             <div class="row">
-                <ul class="row-col">
-                    <li><h1>{{ singleStartup.fields["Company Name"] }}</h1></li>
+                <ul class="row-col left-col">
+                    <li class="heading"><h1>{{ singleStartup.fields["Company Name"] }}</h1></li>
                     <li><span>{{ singleStartup.fields["Company Website"] }}</span></li>
                     <li>
                         <ul class="location">
@@ -15,8 +15,10 @@
                             <li>{{ singleStartup.fields["Country"] }}</li>
                         </ul>
                     </li>
+                    <li><span>{{ singleStartup.fields["Technology Areas"] }}</span></li>
+                    <li><span *ngIf='!singleStartup.fields["Technology Areas"]'>No Technology Areas Found.</span></li>
                 </ul>
-                <ul class='categories row-col'>
+                <ul class='categories row-col right-col'>
                     <li>
                         <span><b>Theme(s):</b></span><br>
                         <span>{{ singleStartup.fields["Theme(s)"] }}</span>
@@ -27,17 +29,12 @@
                         <span>{{ singleStartup.fields["Landscape"] }}</span>
                         <span *ngIf='!singleStartup.fields["Landscape"]'>No Landscape Fields Found.</span>
                     </li>
-                    <li>
-                        <span><b>Technology Areas:</b></span><br>
-                        <span>{{ singleStartup.fields["Technology Areas"] }}</span>
-                        <span *ngIf='!singleStartup.fields["Technology Areas"]'>No Technology Areas Found.</span>
-                    </li>
                 </ul>
                 <div class='alignment desktop'>
                     <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
                         <img class='aligned-img' [src]="imgSrc(aligned)" alt="company logo">
                     </div>
-                    <div class='alignment' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
+                    <div class='alignment null-data' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
                 </div>
             </div>
         </div>
@@ -46,35 +43,10 @@
         <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
                 <img class='aligned-img' [src]="imgSrc(aligned)" alt="company logo">
         </div>
-        <div class='alignment' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
+        <div class='alignment null-data' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
     </div>
     <div class='matches'>
         Matched Properties:
         <span class="italicize">{{ singleStartup.matches }}</span>
     </div>
 </div>
-
-
-<!-- <div class='container' *ngIf='singleStartup'>
-    <ul class="row">
-        <li class='col-1'>
-            <span class="mobile-heading">Company</span>
-            <span>{{ singleStartup.fields["Company Name"] }}</span>
-        </li>
-        <li class='col-2'>
-            <span class="mobile-heading">Summary</span>
-            <span>{{ singleStartup.fields["Two Line Company Summary"] }}</span>
-        </li>
-        <li class='col-3'>
-            <span class="mobile-heading">Theme(s)</span>
-            <span>{{ singleStartup.fields["Theme(s)"] }}</span>
-        </li>
-        <li class='col-4'>
-            <button (click)="addFavorite(singleStartup)">Add to Favorites</button>
-        </li>
-        <li class='col-5'>
-            <span>Matched Fields: <span></span> {{ singleStartup.matches }}</span>
-        </li>
-    </ul>
-</div>
- -->
