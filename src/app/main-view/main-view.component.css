@@ -48,7 +48,6 @@
         flex-direction: row;
         justify-content: space-evenly;
         flex-basis: 80vw;
-        flex-shrink: 0;
     }
 
     .hide {
