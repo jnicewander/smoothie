@@ -7,17 +7,54 @@
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.3);
 }
-
-.modal {
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: chocolate;
-    width: 75vw;
-    border-radius: 10px;
+.btn-container{
+  display: flex;
+ justify-content: flex-start;
+background-color: rgb(192, 192, 192); 
 }
+button{
+    height: 50%;
+    border-radius: 2px;
+    border: none;
+    background: none;
+    margin:.5rem;
+}
+.modal {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: auto;
+    box-shadow: 2px 4px 10px rgb(0, 0, 0);
+    background-color: rgb(235, 235, 235);
+    border-radius: 10px;
+  }
+   .modal-header{
+      display: flex;
+      font-family: "Josefin Sans", sans-serif;
+      background-color: rgb(192, 192, 192); 
+  }
+  .details-title{
+      margin: 0 auto;
+      padding: .8rem;  
+  } 
+   .modal-content{
+display: flex;
+flex-direction: column;
+justify-content: center;
 
-.modal-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  }
+
+  .general-info{
+      display: flex;
+      flex-direction: column;
+    margin:1rem; 
+  }
+
+@media screen and (min-width: 768px) {
+    html, body {
+      font-size: 12px;
+    }
+
+ 
+
 }

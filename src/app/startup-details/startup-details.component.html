@@ -1,44 +1,50 @@
-<div class='container' *ngIf='modalView'>
-    <div class="modal">
-        <div class='modal-header'>
-            <div>
-                <h1>{{ startup.fields["Company Name"] }}</h1>
-            </div>
-            <div>
-                <button (click)='toggleModal()'>X</button>
-            </div>
-        </div>
-        <div class="modal-content">
-            <div class="general-info">
-                <ul>
-                   <li>{{ startup.fields["Company Website"] }}</li>
-                   <li>
-                       <ul>
-                           <li>{{ startup.fields.City }},</li>
-                           <li *ngIf='startup.fields.State'>{{ startup.fields.State }},</li>
-                           <li>{{ startup.fields.Country }}</li>
-                       </ul>
-                   </li>
-                </ul>
-                <ul>
-                    <li>{{ startup.fields["Two Line Company Summary"] }}</li>
-                </ul>
-                <ul>
-                    <li>{{ startup.fields.Alignment }}</li>
-                    <li>{{ startup.fields["Theme(s)"] }}</li>
-                    <li>{{ startup.fields.Landscape }}</li>
-                </ul>
-            </div>
-            <div class="feedback">
-                <ul *ngFor='let feed of feedback'>
-                    <li>Feedback: {{ feed.fields["Your Organization"] }}</li>
-                </ul>
-            </div>
-            <div class="projects">
-                <ul *ngFor='let project of projects'>
-                    <li>Projects: {{ project.fields["Project Name"] }}</li>
-                </ul>
-            </div>
-        </div>
+<div class="container" *ngIf="modalView">
+  <div class="modal">
+     
+    <div class="modal-header">
+         <div class="btn-container">
+      <button class="exitBtn" (click)="toggleModal()">X</button>
+      </div>
+      <h1 class="details-title">DETAILS</h1>
     </div>
+    <div class="modal-content">
+      <div class="general-info">
+         <h1>{{ startup.fields["Company Name"] }}</h1> 
+        <ul>
+          <li>Website:{{ startup.fields["Company Website"] }}</li>
+          <li>
+            <ul>
+                <h3>Location</h3>
+              <li>{{ startup.fields.City }},</li>
+              <li *ngIf="startup.fields.State"> {{ startup.fields.State }},</li>
+              <li>{{ startup.fields.Country }}</li>
+            </ul>
+          </li>
+        </ul>
+        <ul>
+            <h3>CompanySummary</h3>
+          <li> {{ startup.fields["Two Line Company Summary"] }}</li>
+        </ul>
+        <ul>
+            <h3>Alignment:</h3>
+          <li>{{ startup.fields.Alignment }}</li>
+          <h3>Themes:</h3>
+          <li>{{ startup.fields["Theme(s)"] }}</li>
+          <h3>Landscape</h3>
+          <li>{{ startup.fields.Landscape }}</li>
+        </ul>
+      <div class="feedback">
+      <ul *ngFor="let feed of feedback">
+        <li>Feedback: {{ feed.fields["Your Organization"] }}</li>
+      </ul>
+    </div>
+    </div>
+    
+    <div class="projects">
+      <ul *ngFor="let project of projects">
+        <li>Projects: {{ project.fields["Project Name"] }}</li>
+      </ul>
+    </div>
+    </div>
+  </div>
 </div>
