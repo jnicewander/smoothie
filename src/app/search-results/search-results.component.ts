@@ -15,11 +15,13 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   @Input() query: string;
   aligned: string;
   imgURL: string;
+  favoritesList: MasterListRecords[];
 
   constructor(private search: SearchService, private api: ApiService, private favoritesService: FavoritesService, private detailsService: DetailsService) {}
 
   ngOnInit(): void {
-
+    this.favoritesList = this.favoritesService.favoriteStartups;
+    this.checkFavorite();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -29,11 +31,25 @@ export class SearchResultsComponent implements OnInit, OnChanges {
 
   addFavorite(startup, event){
     event.stopPropagation();
-    this.favoritesService.addFavorite(startup)
+    this.favoritesService.addFavorite(startup);
+    this.favoritesList = this.favoritesService.favoriteStartups;
+    this.checkFavorite();
   }
 
   imgSrc(aligned) {
     return `../../assets/images/${aligned.toLowerCase().trim()}.png`;
+  }
+
+  checkFavorite() {
+    let className: string = 'far';
+    if (this.favoritesList) {
+      this.favoritesList.forEach((obj) => {
+        if (obj.id === this.singleStartup.id) {
+          className = 'fas';
+        }
+      });
+      return className;
+    }
   }
 
   
