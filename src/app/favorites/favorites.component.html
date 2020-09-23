@@ -1,4 +1,6 @@
-
+<div class="nulldata" *ngIf='!startups.length'>
+    <h1>You Haven't Added Any Favorites Yet.</h1>
+</div>
 <ul class="headings" *ngIf='startups.length'>
     <li class='col-1'>
         <h2>Company Name</h2>
@@ -26,4 +28,3 @@
     </li>
     <li><button class="button"(click)="removeFavorite(startup)">Remove</button></li>
 </ul>
-<app-search-results></app-search-results>
