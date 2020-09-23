@@ -1,52 +1,59 @@
-<div class="container" *ngIf='singleStartup'>
-    <div class='columns'>
-        <div class=" col-1" (click)="addFavorite(singleStartup, $event)">
-            <a class='favorite'><i class="far fa-star"></i></a>
-        </div>
-        <div class="col-2">
-            <div class="row">
-                <ul class="row-col left-col">
-                    <li class="heading"><h1>{{ singleStartup.fields["Company Name"] }}</h1></li>
+<div class="shame-wrapper">
+    <div class="container" *ngIf='singleStartup'>
+        <div class="col-left">
+            <div>
+                <ul class='row-top'>
+                    <li><h1><a class='favorite' (click)="addFavorite(singleStartup, $event)"><i class="far fa-star"></i></a></h1></li>
+                    <li><h1>{{ singleStartup.fields["Company Name"] }}</h1></li>
                     <li><span>{{ singleStartup.fields["Company Website"] }}</span></li>
-                    <li>
-                        <ul class="location">
-                            <li *ngIf='singleStartup.fields["City"]'>{{ singleStartup.fields["City"] }}, </li>
-                            <li *ngIf='singleStartup.fields["State"]'>{{ singleStartup.fields["State"] }}, </li>
-                            <li>{{ singleStartup.fields["Country"] }}</li>
-                        </ul>
-                    </li>
-                    <li><span>{{ singleStartup.fields["Technology Areas"] }}</span></li>
-                    <li><span *ngIf='!singleStartup.fields["Technology Areas"]'>No Technology Areas Found.</span></li>
                 </ul>
-                <ul class='categories row-col right-col'>
-                    <li>
-                        <span><b>Theme(s):</b></span><br>
-                        <span>{{ singleStartup.fields["Theme(s)"] }}</span>
-                        <span *ngIf='!singleStartup.fields["Theme(s)"]'>No Theme Fields Found.</span>
-                    </li>
-                    <li>
-                        <span><b>Landscape:</b></span><br>
-                        <span>{{ singleStartup.fields["Landscape"] }}</span>
-                        <span *ngIf='!singleStartup.fields["Landscape"]'>No Landscape Fields Found.</span>
-                    </li>
-                </ul>
-                <div class='alignment desktop'>
-                    <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
-                        <img class='aligned-img' [src]="imgSrc(aligned)" alt="company logo">
-                    </div>
-                    <div class='alignment null-data' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
+            </div>
+            <div class="row-mid">
+                <div class="col-left location">
+                    <ul class="row-location">
+                        <li *ngIf='singleStartup.fields["City"]'>{{ singleStartup.fields["City"] }},&nbsp; </li>
+                        <li *ngIf='singleStartup.fields["State"]'>{{ singleStartup.fields["State"] }},&nbsp; </li>
+                        <li>{{ singleStartup.fields["Country"] }}</li>
+                    </ul>
+                    <ul class="col" >
+                        <li *ngFor='let tech of singleStartup.fields["Technology Areas"]'><span>{{ tech }}</span></li>
+                        <li><span *ngIf='!singleStartup.fields["Technology Areas"]'>No Technology Areas Found.</span></li>
+                    </ul>
+                </div>
+                <div class="col-right theme-scape">
+                    <ul class='row-list'>
+                        <li class='col'>
+                            <span><b>Theme(s):</b></span>
+                            <span *ngFor='let theme of singleStartup.fields["Theme(s)"]'>{{ theme }}</span>
+                            <span *ngIf='!singleStartup.fields["Theme(s)"]'>No Theme Fields Found.</span>
+                        </li>
+                        <li class='col'>
+                            <span><b>Landscape:</b></span>
+                            <span>{{ singleStartup.fields["Landscape"] }}</span>
+                            <span *ngIf='!singleStartup.fields["Landscape"]'>No Landscape Fields Found.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
+            <div class="row-bottom mobile">
+                <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
+                        <img class='img-alignment' [src]="imgSrc(aligned)" alt="company logo">
+                </div>
+                <div class='null-data' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
+            </div>
         </div>
+        <div class="col-right desktop">
+            <div class="row-img">
+                <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
+                    <img class='img-alignment' [src]="imgSrc(aligned)" alt="company logo">
+                </div>
+                <span class='null-data' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</span>
+            </div>
+        </div> 
     </div>
-    <div class='alignment mobile'>
-        <div class='img-box' *ngFor='let aligned of singleStartup.fields.Alignment'>
-                <img class='aligned-img' [src]="imgSrc(aligned)" alt="company logo">
-        </div>
-        <div class='alignment null-data' *ngIf='!singleStartup.fields.Alignment'>No Alignments Could Be Found For This Startup.</div>
-    </div>
-    <div class='matches'>
-        Matched Properties:
-        <span class="italicize">{{ singleStartup.matches }}</span>
+    <div class="row-matched" *ngIf='query'>
+        Matched Properties:&nbsp;
+        <span><i>{{ singleStartup.matches }}</i></span>
     </div>
 </div>
+

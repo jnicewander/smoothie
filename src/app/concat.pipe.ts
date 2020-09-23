@@ -17,7 +17,16 @@ export class ConcatPipe implements PipeTransform {
         }
       }
       if (startup.fields.Alignment) {
-        startup.fields['Alignment'] = startup.fields.Alignment.split(',');
+        startup.fields['Alignment'] = startup.fields.Alignment.split(',').sort();
+      }
+      if (startup.fields["Theme(s)"]) {
+        startup.fields["Theme(s)"] = startup.fields["Theme(s)"].split(',').sort();
+      }
+      if (startup.fields["Company Website"]) {
+        startup.fields["Company Website"] = startup.fields["Company Website"].replace(' ', '');
+      }
+      if (startup.fields["Technology Areas"]) {
+        startup.fields["Technology Areas"] = startup.fields["Technology Areas"].split(',').sort();
       }
       let merged = matches.join(', ')
       this.matchedProperties.push(merged);

@@ -12,6 +12,7 @@ import { FavoritesService } from '../services/favorites.service'
 })
 export class SearchResultsComponent implements OnInit, OnChanges {
   @Input() singleStartup: MasterListRecords;
+  @Input() query: string;
   aligned: string;
   imgURL: string;
 
