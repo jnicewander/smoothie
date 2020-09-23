@@ -33,7 +33,6 @@ export class ConcatPipe implements PipeTransform {
       matches = [];
       startup['matches'] = this.matchedProperties;
     }
-    console.log(startup.fields.Alignment);
     return startup;
   }
 }
