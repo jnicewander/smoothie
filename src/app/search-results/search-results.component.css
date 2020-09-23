@@ -4,9 +4,10 @@
     color: white;
     margin: 1rem;
     font-family: 'Montserrat', sans-serif;
+}
+.shame-wrapper:hover{
     box-shadow: 0 1px 5px darkgrey;
 }
-
 .container {
     flex-direction: row;
 }
