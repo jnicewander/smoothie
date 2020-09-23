@@ -42,8 +42,9 @@ button{
 
   .details-title{
       color: white;
-      font-size: 4vw;
-      padding: .8rem; 
+      font-size: 6vw;
+      padding: .6rem; 
+      margin: 0 4rem;
   } 
 
   .website{
@@ -88,5 +89,6 @@ ul,li,h3{
 }
 .details-title{
   font-size: 3vw;
+  margin:0;
 }
 }

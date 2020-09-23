@@ -20,7 +20,7 @@ form {
 .text-input {
     flex-basis: 75%;
     border: none;
-    padding: .8rem
+    padding: .6rem
 }
 
 .search-btn {
@@ -30,7 +30,7 @@ form {
     color: white;
     font-weight: 700;
     background-color: rgb(10, 64, 88);
-    padding: .8rem;
+    padding: .6rem;
 }
 
 @media only screen and (max-width: 370px) {

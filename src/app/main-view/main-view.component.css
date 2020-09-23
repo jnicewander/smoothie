@@ -28,7 +28,7 @@
     color: rgb(255, 255, 255);
     margin-top: 2rem;
     letter-spacing: 4px;
-    font-size: 2.3vw;
+    font-size: 5vw;
 }
 
 @media only screen and (min-width: 650px) {
@@ -36,7 +36,9 @@
         flex-direction: row;
         align-content: center;
     }
-
+.theme-title{
+    font-size: 2.4vw;
+}
     .theme-colL {
         display: flex;
         justify-content: flex-end;
