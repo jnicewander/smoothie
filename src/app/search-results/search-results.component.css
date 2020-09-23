@@ -1,9 +1,10 @@
 .shame-wrapper {
-    background-color: rgba(77, 77, 77, 0.363);
+    background-color: rgba(77, 77, 77, 0.623);
     border: 1px solid black;
     color: white;
     margin: 1rem;
     font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 1px 5px darkgrey;
 }
 
 .container {
