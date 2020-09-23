@@ -31,14 +31,21 @@
     font-size: 5vw;
 }
 
+
+.hide {
+    visibility: hidden;
+}
+
 @media only screen and (min-width: 650px) {
     .themes {
         flex-direction: row;
         align-content: center;
     }
-.theme-title{
-    font-size: 2.4vw;
-}
+
+    .theme-title{
+        font-size: 2.4vw;
+    }
+
     .theme-colL {
         display: flex;
         justify-content: flex-end;
@@ -50,10 +57,6 @@
         flex-direction: row;
         justify-content: space-evenly;
         flex-basis: 80vw;
-    }
-
-    .hide {
-        visibility: hidden;
     }
 
     .theme-title {
