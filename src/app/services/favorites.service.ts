@@ -6,9 +6,9 @@ import { MasterListRecords, MasterListFields } from '../interfaces/master-list-r
   providedIn: 'root'
 })
 export class FavoritesService {
+  favoriteStartups: MasterListRecords[] = [];
 
   constructor() { }
-  favoriteStartups: MasterListRecords[] = [];
 
   addFavorite(startup:MasterListRecords){
     this.favoriteStartups.push(startup)
