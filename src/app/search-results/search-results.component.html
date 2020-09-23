@@ -3,7 +3,7 @@
         <div class="col-left">
             <div>
                 <ul class='row-top'>
-                    <li><h1><a class='favorite' (click)="addFavorite(singleStartup, $event)"><i class="far fa-star"></i></a></h1></li>
+                    <li><h1><a class='favorite' (click)="addFavorite(singleStartup, $event)"><i [ngClass]='checkFavorite()' class="fa-star"></i></a></h1></li>
                     <li><h1>{{ singleStartup.fields["Company Name"] }}</h1></li>
                     <li><span>{{ singleStartup.fields["Company Website"] }}</span></li>
                 </ul>
