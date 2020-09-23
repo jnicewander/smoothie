@@ -58,12 +58,12 @@ button{
     display: flex;
   justify-content: center;
   font-size: 4vw;
-  font-family: "montserrat";
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 4px;
 }
 
   .general-info{
-    font-family: "montserrat";
+    font-family: 'Montserrat', sans-serif;
   }
 
 ul{
