@@ -10,17 +10,19 @@ import { DetailsService } from '../services/details.service';
 })
 
 export class FavoritesComponent implements OnInit {
-
   startups: MasterListRecords[]; 
+
   constructor(private favoritesService: FavoritesService, private detailsService: DetailsService) { }
-  ngOnInit(){
+
+  ngOnInit() {
     this.startups = this.favoritesService.favoriteStartups
   }
+
   removeFavorite(startup){
     this.favoritesService.removeFavorite(startup)
   }
+  
   showDetails(startup) {
     this.detailsService.getDetails.emit(startup);
-    // add routing to display startup-detail component in here.
   }
 }
