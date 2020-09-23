@@ -27,8 +27,9 @@ button{
     justify-content: center;
     width: 80vw;
     height: auto;
-    box-shadow: 2px 4px 10px rgb(0, 0, 0);
-    background-color: rgb(230, 230, 230);
+    box-shadow: 2px 4px 10px rgb(167, 167, 167);
+    background-color: rgb(61, 61, 61);
+    color: white;
   }
 
    .modal-header{
@@ -36,6 +37,7 @@ button{
       font-family:'Bebas Neue', Helvetica, sans-serif;
       background-color: rgb(17, 92, 128);
       letter-spacing: 4px;
+    
   }
 
   .details-title{

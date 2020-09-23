@@ -1,26 +1,32 @@
 .shame-wrapper {
-    background-color: rgb(109, 189, 226);
+    background-color: rgba(77, 77, 77, 0.363);
     border: 1px solid black;
-    color: black;
+    color: white;
     font-size: 2vw;
     margin: 1rem;
 }
 
 .container {
-    display: flex;
     flex-direction: row;
+    
 }
 
 [class^='col'] {
     display: flex;
     flex-direction: column;
     flex-basis: 100%;
+   font-family:"montserrat";
+
+    font-size: 3vw;
 }
 
 [class^='row'] {
     display: flex;
     flex-direction: row;
     flex-basis: 100%;
+    font-family:"montserrat";
+    padding: .5rem;
+    font-size: .8rem;
 }
 
 .row-top {
@@ -28,6 +34,7 @@
     /* background-color: rgb(11, 65, 90); */
     padding: .2rem;
     border-bottom: 1px solid white;
+    color: white;
 }
 
 .row-top>li {
@@ -75,11 +82,13 @@
 
 @media only screen and (min-width: 650px) {
     .container {
+        display: flex;
         font-size: 1vw;
     }
 
     [class^='col'] {
         flex-basis: 50%;
+        font-size: 1rem;
     }
 
     .col-left {
