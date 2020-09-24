@@ -21,6 +21,7 @@ export class ResultsListComponent implements OnInit {
     if (this.search.searchResults) {
       this.startups = this.search.searchResults.records;
       this.query = this.search.query;
+      this.offsetValues.push(this.search.offset);
       this.search.sendIt.subscribe(res => {
         this.offsetValues = [];
         this.query = res.query;
@@ -33,7 +34,7 @@ export class ResultsListComponent implements OnInit {
   }
 
   next() {
-    if(this.offsetValues) {
+    if(this.offsetValues.length) {
       this.api.getTableData(null, this.offsetValues[this.offsetValues.length - 1]).subscribe((response: MasterListResponse) => {
         this.startups = response.records;
         this.offsetValues.push(response.offset);
