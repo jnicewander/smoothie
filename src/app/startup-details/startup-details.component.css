@@ -1,94 +1,138 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.493);
-}
-.btn-container{
   display: flex;
- justify-content: flex-start;
-background-color:  rgb(17, 92, 128);
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.493);
 }
 
-button{
-    height: 50%;
-    border-radius: 2px;
-    border: none;
-    background: none;
-    margin:.5rem;
+[class^='row'] {
+  display: flex;
+  flex-direction: row;
+}
+
+[class^='col'] {
+  display: flex;
+  flex-direction: column;
 }
 
 .modal {
- 
-    align-items: center;
-    justify-content: center;
-    width: 80vw;
-    height: auto;
-    box-shadow: 2px 4px 10px rgb(167, 167, 167);
-    background-color: rgb(61, 61, 61);
-    color: white;
-  }
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: auto;
+  box-shadow: 2px 4px 10px rgb(167, 167, 167);
+  background-color: rgb(61, 61, 61);
+  color: white;
+}
 
-   .modal-header{
-      display: flex;
-      font-family:'Bebas Neue', Helvetica, sans-serif;
-      background-color: rgb(17, 92, 128);
-      letter-spacing: 4px;
-    
-  }
+.modal-header {
+  display: flex;
+  width: 100%;
+  font-family:'Bebas Neue', Helvetica, sans-serif;
+  background-color: rgb(17, 92, 128);
+  letter-spacing: 4px;
+}
 
-  .details-title{
-      color: white;
-      font-size: 6vw;
-      padding: .6rem; 
-      margin: 0 4rem;
-  } 
-
-  .website{
-    display: flex;
-    justify-content: center;
-    font-size: .8rem;
-  }
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+}
 
 
-  .startupNameTitle{
-    display: flex;
+.btn-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.493);
+  flex-basis: 10%;
+  align-items: baseline;
+  padding: 1vw;
+  background-color:  rgb(17, 92, 128);
+}
+
+button {
+  font-size: 1.5vw;
+  color: white;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.493);
+}
+
+.cat-heading {
+  border-bottom: 1px solid white;
+}
+
+.details-title {
+  flex-basis: 90%;
+}
+
+.details-title {
+  color: white;
+  font-size: 6vw;
+  padding: .6rem; 
+} 
+
+.startupNameTitle{
+  display: flex;
   justify-content: center;
   font-size: 4vw;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 4px;
 }
 
-  .general-info{
-    font-family: 'Montserrat', sans-serif;
+.category {
+  font-size: 4vw;
+  margin: 1vw;
+  border-bottom: 1px solid white;
+}
+
+.category>a {
+  margin: 0 1vw;
+}
+
+.active-cat {
+  color: white;
+}
+
+.inactive-cat {
+  color: gray;
+}
+
+[class*='-cat']:hover {
+  color: white;
+  
+}
+
+.feedback, .projects {
+  padding: 1vw;
+}
+
+li {
+  margin: .5rem;
+  border-bottom: 1px solid white;
+  font-size: 4vw;
+}
+
+@media only screen and (min-width: 650px) {
+  li {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .category {
+    font-size: 3vw;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) {
+  button {
+    font-size: 1vw;
   }
 
-ul{
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  border: 1px solid rgb(105, 105, 105);
-  padding:.2rem;
-  margin:1rem;
-}
-h3{
-  margin-right:1rem;
-}
-ul,li,h3{
-  font-size:4vw;
-}
-@media only screen and (min-width: 768px) {
-  ul,li,h3{
-    font-size:1.5vw;
+  .category {
+    font-size: 2vw;
   }
-  .startupNameTitle{
-    font-size: 2.5vw;
-}
-.details-title{
-  font-size: 3vw;
-  margin:0;
-}
 }

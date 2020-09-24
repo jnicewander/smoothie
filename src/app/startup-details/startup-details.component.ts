@@ -15,6 +15,7 @@ export class StartupDetailsComponent implements OnInit {
   feedback: FeedbackRecords[];
   projects: ProjectsRecords[];
   modalView: boolean = false;
+  categoryView: boolean = false;
 
   constructor(private details: DetailsService, private apiService: ApiService) { }
 
@@ -38,7 +39,17 @@ export class StartupDetailsComponent implements OnInit {
   }
 
   toggleModal() {
-    this.modalView = !this.modalView
+    this.modalView = !this.modalView;
   }
+
+  toggleCategory() {
+    this.categoryView = !this.categoryView;
+
+    if (this.categoryView) {
+      return 'active-cat';
+    } else {
+      return 'inactive-cat';
+    }
+  };
 
 }

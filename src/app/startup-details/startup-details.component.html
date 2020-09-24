@@ -1,51 +1,42 @@
 <div class="container" *ngIf="modalView">
-  <div class="modal">
-     
+  <div class="modal"> 
     <div class="modal-header">
-         <div class="btn-container">
-      <button class="exitBtn" (click)="toggleModal()">X</button>
+      <div class="btn-container">
+        <button class="exitBtn" (click)="toggleModal()">X</button>
       </div>
-      <h1 class="details-title">DETAILS</h1>
+      <h1 class="details-title">{{ startup.fields["Company Name"] }} DETAILS</h1>
     </div>
-    <div class="modal-content">
-      <div class="general-info">
-         <h1 class="startupNameTitle">{{ startup.fields["Company Name"] }}</h1> 
-          <li class="website"> Website:  {{ startup.fields["Company Website"] }}</li>
-         <ul class="details2">
-                <h3> Location: </h3>
-              <li>{{ startup.fields.City }},</li>
-              <li *ngIf="startup.fields.State"> {{ startup.fields.State }},</li>
-              <li>{{ startup.fields.Country }}</li>
-        </ul>
-        <ul class="sumamry">
-            <h3> Company Summary: </h3>
-          <li> {{ startup.fields["Two Line Company Summary"] }}</li>
-        </ul>
-        <ul>
-            <h3> Money Raised: </h3>
-          <li>${{ startup.fields.Raised }}</li>
-        </ul>
-        <ul>
-          <h3> Uniqueness: </h3>
-          <li>{{ startup.fields.Uniqueness }}</li>
+      <div class="row modal-content">
+        <div class="row category">
+          <a class='category-title' (click)='toggleCategory()'><h2 [ngClass]="toggleCategory()">Feedback</h2></a>
+          <a class='category-title' (click)='toggleCategory()'><h2 [ngClass]="toggleCategory()">Projects</h2></a>
+        </div>    
+        <div class="row feedback" *ngIf='categoryView'>
+          <ul class="col feedback" *ngFor='let feed of feedback'>
+            <li><h3 class="cat-heading">{{ feed.fields["Your Organization"] }} Feedback</h3></li>
+            <li><b>Intro Date: </b> {{ feed.fields["Intro Date"] }}</li>
+            <li><b>Organization: </b> {{ feed.fields["Your Organization"] }}</li>
+            <li><b>Alignment: </b> {{ feed.fields["Alignment to your organization"] }}</li>
+            <li><b>Uniqueness: </b> {{ feed.fields["Uniqueness of Tech"] }}</li>
+            <li><b>Team Strength: </b> {{ feed.fields["Team Strength"] }}</li>
+            <li><b>Business Potential: </b> {{ feed.fields["Business Potential"] }}</li>
+            <li><b>Level of Interest: </b> {{ feed.fields["Level of Interest in Project"] }}</li>
+            <li><b>Questions: </b> {{ feed.fields["Questions"] }}</li>
           </ul>
-          <ul>
-          <h3> Technology Areas: </h3>
-          <li>{{ startup.fields["Technology Areas"] }}</li>
-        </ul>
-        <div class="projects">
-      <ul *ngFor="let project of projects">
-        <h3> Projects: </h3>
-        <li> {{ project.fields["Project Name"] }}</li>
-      </ul>
-    </div>
-    <div class="team">
-      <ul>
-        <h3> Projects: </h3>
-        <li> {{ startup.fields.Team }}</li>
-        </ul>
-    </div>
-    </div>
-    </div>
+        </div>
+        <div class="col projects" *ngIf='!categoryView'>
+          <ul class="projects" *ngFor="let project of projects" >
+            <li class="cat-heading">{{ project.fields["Project Name"] }}</li>
+            <li *ngIf='!project'>No Projects</li>
+            <li>{{ project.fields["Project Summary"] }}</li>
+            <li><b>Partners: </b> {{ project.fields["Partners Involved"] }}</li>
+            <li><b>Engagement Phase: </b>{{ project.fields["Engagement Phase"] }}</li>
+            <li><b>Engagement Progress: </b>{{ project.fields["Engagement Progress"] }}</li>
+            <li><b>Engagement Type: </b>{{ project.fields["Engagement Type"] }}</li>
+            <li><b>Status: </b> {{ project.fields["Ongoing Status"] }}</li>
+            <li><b>Interested: </b> {{ project.fields["Parnters Interested in Secondary Engagement"] }}</li>
+          </ul>
+        </div>
+      </div>
   </div>
 </div>
