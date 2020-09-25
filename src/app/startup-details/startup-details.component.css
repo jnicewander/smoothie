@@ -23,7 +23,8 @@
   align-items: center;
   justify-content: center;
   width: 80vw;
-  height: auto;
+  height: 90vh;
+  overflow: scroll;
   box-shadow: 2px 4px 10px rgb(167, 167, 167);
   background-color: rgb(61, 61, 61);
   color: white;
