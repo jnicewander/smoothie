@@ -24,11 +24,11 @@ export class ThemeCardComponent implements OnInit {
   
   addThemeImg(theme): object {
     if (theme === 'The Good Life') {
-      return {"background-image":"url('../../assets/images/theGoodLife.jpg')"};
+      return {"background-image":"url('assets/images/theGoodLife.jpg')"};
     } else if (theme === 'Robust Future') {
-      return {"background-image":"url('../../assets/images/robustFuture.jpg')"};
+      return {"background-image":"url('assets/images/robustFuture.jpg')"};
     } else {
-      return {"background-image":"url('../../assets/images/health.jpg')"};
+      return {"background-image":"url('assets/images/health.jpg')"};
     }
   }
 

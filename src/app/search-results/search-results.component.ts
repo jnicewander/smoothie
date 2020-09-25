@@ -37,7 +37,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
   }
 
   imgSrc(aligned) {
-    return `../../assets/images/${aligned.toLowerCase().trim()}.png`;
+    return `assets/images/${aligned.toLowerCase().trim()}.png`;
   }
 
   checkFavorite() {

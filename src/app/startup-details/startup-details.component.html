@@ -11,7 +11,7 @@
           <a class='category-title' (click)='toggleCategory()'><h2 [ngClass]="toggleCategory()">Feedback</h2></a>
           <a class='category-title' (click)='toggleCategory()'><h2 [ngClass]="toggleCategory()">Projects</h2></a>
         </div>    
-        <div class="row feedback" *ngIf='categoryView'>
+        <div class="row feedback" *ngIf='!categoryView'>
           <ul class="col feedback" *ngFor='let feed of feedback'>
             <li><h3 class="cat-heading">{{ feed.fields["Your Organization"] }} Feedback</h3></li>
             <li><b>Intro Date: </b> {{ feed.fields["Intro Date"] }}</li>
@@ -24,7 +24,7 @@
             <li><b>Questions: </b> {{ feed.fields["Questions"] }}</li>
           </ul>
         </div>
-        <div class="col projects" *ngIf='!categoryView'>
+        <div class="col projects" *ngIf='categoryView'>
           <ul class="projects" *ngFor="let project of projects" >
             <li class="cat-heading">{{ project.fields["Project Name"] }}</li>
             <li *ngIf='!project'>No Projects</li>
