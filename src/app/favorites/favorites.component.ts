@@ -18,6 +18,10 @@ export class FavoritesComponent implements OnInit {
     this.startups = this.favoritesService.favoriteStartups
   }
 
+  toggleFavorite(startup: MasterListRecords) {
+    this.favoritesService.toggleFavorite(startup);
+  }
+
   removeFavorite(startup){
     this.favoritesService.removeFavorite(startup)
   }
