@@ -44,12 +44,7 @@ export class StartupDetailsComponent implements OnInit {
 
   toggleCategory() {
     this.categoryView = !this.categoryView;
-
-    if (this.categoryView) {
-      return 'active-cat';
-    } else {
-      return 'inactive-cat';
-    }
   };
+
 
 }
