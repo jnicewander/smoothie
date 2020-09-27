@@ -7,12 +7,32 @@
       <h1 class="details-title">{{ startup.fields["Company Name"] }} DETAILS</h1>
     </div>
       <div class="row modal-content">
-        <div class="row category">
-          <a class='category-title' (click)='toggleCategory()'><h2 [ngClass]="toggleCategory()">Feedback</h2></a>
-          <a class='category-title' (click)='toggleCategory()'><h2 [ngClass]="toggleCategory()">Projects</h2></a>
-        </div>    
-        <div class="row feedback" *ngIf='!categoryView'>
-          <ul class="col feedback" *ngFor='let feed of feedback'>
+        <div class="row tab">
+          <a (click)='toggleCategory()' [ngClass]="{'active': !categoryView, 'inactive': categoryView}"><h2>Projects</h2></a>
+          <a (click)='toggleCategory()' [ngClass]="{'active': categoryView, 'inactive': !categoryView}"><h2>Feedback</h2></a>
+        </div>
+
+        <div class="col tab-data" *ngIf='!categoryView' [ngClass]="{'active': !categoryView, 'inactive': categoryView}">
+          <div class='null-data' *ngIf='!projects.length'>
+            <h2>There are currently no projects listed for {{ startup.fields["Company Name"] }}.</h2>
+          </div>
+          <ul class="tab-data" *ngFor="let project of projects">
+            <li class="cat-heading"><h3>{{ project.fields["Project Name"] }}</h3></li>
+            <li>{{ project.fields["Project Summary"] }}</li>
+            <li><b>Partners: </b> {{ project.fields["Partners Involved"] }}</li>
+            <li><b>Engagement Phase: </b>{{ project.fields["Engagement Phase"] }}</li>
+            <li><b>Engagement Progress: </b>{{ project.fields["Engagement Progress"] }}</li>
+            <li><b>Engagement Type: </b>{{ project.fields["Engagement Type"] }}</li>
+            <li><b>Status: </b> {{ project.fields["Ongoing Status"] }}</li>
+            <li><b>Interested: </b> {{ project.fields["Parnters Interested in Secondary Engagement"] }}</li>
+          </ul>
+        </div>
+
+        <div class="row tab-data" *ngIf='categoryView' [ngClass]="{'active': categoryView, 'inactive': !categoryView}">
+          <div class='null-data' *ngIf='!feedback.length'>
+            <h2>There is currently no feedback for {{ startup.fields["Company Name"] }}.</h2>
+          </div>
+          <ul class="col tab-data" *ngFor='let feed of feedback'>
             <li><h3 class="cat-heading">{{ feed.fields["Your Organization"] }} Feedback</h3></li>
             <li><b>Intro Date: </b> {{ feed.fields["Intro Date"] }}</li>
             <li><b>Organization: </b> {{ feed.fields["Your Organization"] }}</li>
@@ -24,19 +44,7 @@
             <li><b>Questions: </b> {{ feed.fields["Questions"] }}</li>
           </ul>
         </div>
-        <div class="col projects" *ngIf='categoryView'>
-          <ul class="projects" *ngFor="let project of projects" >
-            <li class="cat-heading">{{ project.fields["Project Name"] }}</li>
-            <li *ngIf='!project'>No Projects</li>
-            <li>{{ project.fields["Project Summary"] }}</li>
-            <li><b>Partners: </b> {{ project.fields["Partners Involved"] }}</li>
-            <li><b>Engagement Phase: </b>{{ project.fields["Engagement Phase"] }}</li>
-            <li><b>Engagement Progress: </b>{{ project.fields["Engagement Progress"] }}</li>
-            <li><b>Engagement Type: </b>{{ project.fields["Engagement Type"] }}</li>
-            <li><b>Status: </b> {{ project.fields["Ongoing Status"] }}</li>
-            <li><b>Interested: </b> {{ project.fields["Parnters Interested in Secondary Engagement"] }}</li>
-          </ul>
-        </div>
+        
       </div>
   </div>
 </div>
