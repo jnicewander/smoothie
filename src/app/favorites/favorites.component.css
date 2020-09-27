@@ -1,21 +1,24 @@
-
 .favTitle{
     display: flex;
     justify-content: center;
 }
+
 .headings {
     display: none;
 }
-.background-container{
+
+.background-container {
     background-color: rgba(0, 0, 0, 0.383);
 }
-.emptyFav{
+
+.emptyFav {
     display: flex;
     justify-content: center;
     color:white;
     margin-top: 2rem;
     font-size: 1.8rem;
 }
+
 ul {
     font-family: 'Montserrat', sans-serif;
     display: flex;
@@ -24,13 +27,14 @@ ul {
     margin: .5rem auto;
     padding: .5rem;
     border: 1px solid rgb(124, 124, 124);
-    
     background-color: #353535ab;
     color: white;
 }
-ul:hover{
+
+ul:hover {
     box-shadow: 0 1px 5px darkgrey;
 }
+
 li {
     display: flex;
 }
@@ -38,22 +42,6 @@ li {
 span {
     flex-basis: 50%;
 }
-
-/**.button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-**/
 
 .button {
 	box-shadow:inset 0px 1px 0px 0px #ffffff;
@@ -71,10 +59,12 @@ span {
 	text-decoration:none;
 	text-shadow:0px 4px 0px #ffffff;
 }
+
 .button:hover {
 	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
 	background-color:#f6f6f6;
 }
+
 .button:active {
 	position:relative;
 	top:1px;
