@@ -29,9 +29,9 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     }
   }
 
-  addFavorite(startup, event){
+  toggleFavorite(startup, event){
     event.stopPropagation();
-    this.favoritesService.addFavorite(startup);
+    this.favoritesService.toggleFavorite(startup);
     this.favoritesList = this.favoritesService.favoriteStartups;
     this.checkFavorite();
   }
