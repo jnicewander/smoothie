@@ -83,22 +83,19 @@ button {
   letter-spacing: 4px;
 }
 
-.category {
+.tab {
   font-size: 4vw;
-  margin: 1vw;
-  border-bottom: 1px solid white;
 }
 
-.category>a {
-  margin: 0 1vw;
-}
-
-.active-cat {
+.active {
+  padding: 1rem;
   color: white;
+  background-color: rgba(0, 0, 0, 0.493);
 }
 
-.inactive-cat {
+.inactive {
   color: gray;
+  padding: 1rem;
 }
 
 [class*='-cat']:hover {
@@ -106,23 +103,19 @@ button {
   
 }
 
-.feedback, .projects {
-  padding: 1vw;
-}
-
 li {
   margin: .5rem;
-  border-bottom: 1px solid white;
   font-size: 4vw;
 }
 
 @media only screen and (min-width: 650px) {
   li {
     margin: 0;
-    font-size: 2rem;
+    font-size: 1rem;
+    padding: 1rem;
   }
   
-  .category {
+  .tab {
     font-size: 3vw;
   }
 }
@@ -133,7 +126,7 @@ li {
     font-size: 1vw;
   }
 
-  .category {
+  .tab {
     font-size: 2vw;
   }
 }
