@@ -2,7 +2,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { MasterListResponse, MasterListRecords } from '../interfaces/master-list-response';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

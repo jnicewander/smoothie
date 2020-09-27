@@ -1,3 +1,4 @@
+// TODO: Submit needs to pass query into config.component
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { NgForm } from '@angular/forms';
@@ -17,8 +18,5 @@ export class SearchBarComponent implements OnInit {
     this.search.submitData({query: form.value.query.toLowerCase()});
   }
 
-  getCriteria(g){
-
-  }
 }
 
