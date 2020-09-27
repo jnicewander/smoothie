@@ -18,12 +18,14 @@ form {
 }
 
 .text-input {
+    width: 50vw;
     flex-basis: 75%;
     border: none;
     padding: .6rem
 }
 
 .search-btn {
+    width: 50vw;
     flex-basis: 25%;
     border: none;
     border-radius: 0 20px 5px 0;
@@ -34,7 +36,7 @@ form {
 }
 
 @media only screen and (max-width: 370px) {
-    /* For the two phones smaller than 370px */
+    /* For phones smaller than 370px */
     .text-input {
         flex-basis: 100%;
         margin-top: .2rem;
@@ -48,13 +50,21 @@ form {
 }
 
 @media only screen and (min-width: 650px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .text-input {
+        font-size: 1.5vw;
+        max-width: 60vw;
         margin-top: .2rem;
     }
 
     .search-btn {
+        font-size: 1.5vw;
         margin-top: .5rem;
-        flex-basis: 45%;
+        max-width: 30vw;
         border-radius: 5px 15px 5px 15px;
     }
 
@@ -68,5 +78,25 @@ form {
         border: none;
         color: rgb(168, 168, 168);
         background-color: rgb(10, 64, 88);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .text-input {
+        font-size: 1.3vw;
+    }
+
+    .search-btn {
+        font-size: 1.3vw;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    .text-input {
+        font-size: 1vw;
+    }
+
+    .search-btn {
+        font-size: 1vw;
     }
 }
