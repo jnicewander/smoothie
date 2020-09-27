@@ -13,7 +13,6 @@
     </li>
 </ul>
 <ul *ngFor='let startup of startups' (click)='showDetails(startup)'>
-    <!-- See MasterList - Fields interface for key names -->
     <li class='col-1'>
         <span class="mobile-heading">Company</span>
         <span>{{ startup.fields["Company Name"] }}</span>
@@ -26,5 +25,6 @@
         <span class="mobile-heading">Theme(s)</span>
         <span>{{ startup.fields["Theme(s)"] }}</span>
     </li>
+    <!-- <li><h1><a class='favorite' (click)="toggleFavorite(singleStartup, $event)"><i [ngClass]='checkFavorite()' class="fa-star"></i></a></h1></li> -->
     <li><button class="button"(click)="removeFavorite(startup)">Remove</button></li>
 </ul>
