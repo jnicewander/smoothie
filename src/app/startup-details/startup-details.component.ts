@@ -12,8 +12,8 @@ import { ProjectsRecords, ProjectsResponse } from '../interfaces/projects-respon
 })
 export class StartupDetailsComponent implements OnInit {
   startup: MasterListRecords;
-  feedback: FeedbackRecords[];
-  projects: ProjectsRecords[];
+  feedback: FeedbackRecords[] = [];
+  projects: ProjectsRecords[] = [];
   modalView: boolean = false;
   categoryView: boolean = false;
 
