@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, Input, Output, EventEmitter, SimpleChange, SimpleChanges } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { ApiService } from '../services/api.service';
-import { MasterListResponse, MasterListRecords } from '../interfaces/master-list-response';
+import {  MasterListRecords } from '../interfaces/master-list-response';
 import { DetailsService } from '../services/details.service';
 import { FavoritesService } from '../services/favorites.service'
 
@@ -21,7 +21,7 @@ export class SearchResultsComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.favoritesList = this.favoritesService.favoriteStartups;
-    this.checkFavorite();
+    this.checkFavorite(this.singleStartup);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -33,24 +33,19 @@ export class SearchResultsComponent implements OnInit, OnChanges {
     event.stopPropagation();
     this.favoritesService.toggleFavorite(startup);
     this.favoritesList = this.favoritesService.favoriteStartups;
-    this.checkFavorite();
+    this.checkFavorite(startup);
   }
 
   imgSrc(aligned) {
     return `assets/images/${aligned.toLowerCase().trim()}.png`;
   }
 
-  checkFavorite() {
+  checkFavorite(startup) {
     let className: string = 'far';
-    if (this.favoritesList) {
-      this.favoritesList.forEach((obj) => {
-        if (obj.id === this.singleStartup.id) {
-          className = 'fas';
-        }
-      });
-      return className;
+    let index = this.favoritesService.checkFavorites(startup);
+    if (this.favoritesList && index !== -1) {
+      className = 'fas';
     }
+    return className;
   }
-
-  
 }
