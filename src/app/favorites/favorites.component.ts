@@ -10,23 +10,29 @@ import { DetailsService } from '../services/details.service';
 })
 
 export class FavoritesComponent implements OnInit {
-  startups: MasterListRecords[]; 
+  favoritesList: MasterListRecords[]; 
 
   constructor(private favoritesService: FavoritesService, private detailsService: DetailsService) { }
 
   ngOnInit() {
-    this.startups = this.favoritesService.favoriteStartups
+    this.favoritesList = this.favoritesService.favoriteStartups
   }
 
   toggleFavorite(startup: MasterListRecords) {
     this.favoritesService.toggleFavorite(startup);
   }
 
-  removeFavorite(startup){
-    this.favoritesService.removeFavorite(startup)
+  checkFavorite(startup) {
+    let className: string = 'far';
+    let index = this.favoritesService.checkFavorites(startup);
+    if (this.favoritesList && index !== -1) {
+      className = 'fas';
+    }
+    return className;
   }
-  
+
   showDetails(startup) {
     this.detailsService.getDetails.emit(startup);
   }
+  
 }
