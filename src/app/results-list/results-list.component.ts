@@ -21,13 +21,20 @@ export class ResultsListComponent implements OnInit {
     if (this.search.searchResults) {
       this.startups = this.search.searchResults.records;
       this.query = this.search.query;
-      this.offsetValues.push(this.search.offset);
+      if (this.search.offset) {
+        this.offsetValues.push(this.search.offset);
+      }
       this.search.sendIt.subscribe(res => {
         this.offsetValues = [];
         this.query = res.query;
         this.startups = res.result.records;
-        this.offsetValues.push(res.result.offset);
+        if (this.search.offset) {
+          this.offsetValues.push(res.result.offset);
+        }
       })
+      console.log(this.offsetValues);
+      console.log(this.offsetValues[0]);
+
     } else {
       this.router.navigate(['/']);
     }

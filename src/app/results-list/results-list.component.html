@@ -1,6 +1,6 @@
 <div class='list-container' *ngIf='startups'>
     <app-search-results *ngFor='let startup of startups; index as i' [singleStartup]='startup | concat: query' [query]='query' (click)='showDetails(startup)'></app-search-results>
-    <div class='btn-container'>
+    <div class='btn-container' *ngIf='offsetValues.length'>
         <button (click)='next()'>NEXT</button>
     </div>
 </div>
