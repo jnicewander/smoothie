@@ -71,11 +71,12 @@
     height: auto;
     width: 8vw;
     background-color: white;
-    border-radius: 4px 10px;
+    /* border-radius: 4px 10px; */
 }
 
 .img-box {
-    margin: 0 .2rem;
+    /* margin: 0 .2rem; */
+    transform: rotate(-45deg);
 }
 
 .row-matched {
